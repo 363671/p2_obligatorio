@@ -23,12 +23,15 @@ namespace Dominio
         public void PrecargarInvestigadores()
         {
             Investigador i1 = new Investigador("Sherlock@go.ar", "pass", "Sherlock Holmes", Rol.Detective);
+            Investigador i2 = new Investigador("Sherlock@go.ar", "pass", "Sherlock Holmes", Rol.Detective);
             AgregarInvestigador(i1);
+            AgregarInvestigador(i2);
         }
 
         public void PrecargarSospechosos()
         {
             Sospechoso s1 = new Sospechoso("Paco", "111111111", new DateTime(01,01,2026), true);
+            Sospechoso s2 = new Sospechoso("Peco", "222222222", new DateTime(01,02,2026), false);
 
         }
 

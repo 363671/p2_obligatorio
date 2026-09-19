@@ -31,13 +31,13 @@ namespace Dominio
             Nombre = nombre;
             Rol = rol;
             ValidarDatos();
-
         }
 
         // METODOS
 
         private void ValidarDatos()
         {
+
             ValidarMail();
             ValidarContrasena();
             ValidarNombre();
@@ -151,6 +151,8 @@ namespace Dominio
          
             return false;
         }
+
+        
 
         private void ValidarRol()
         {
