@@ -15,7 +15,7 @@ namespace Dominio
         public DateTime FechaNacimiento { get; set; }
         public bool TieneAntecedentes { get; set; }
 
-        // ctor
+        // CTOR
         public Sospechoso()
         {
             Id = ++UltimoId;
@@ -96,11 +96,6 @@ namespace Dominio
         {
             string errores = "";
 
-            //if (FechaNacimiento == null)
-            //{
-            //    errores += "Fecha de Nacimiento invalida";
-            //}
-
             if (FechaNacimiento >= DateTime.Today)
             {
                 errores += "Fecha de Nacimiento invalida";
@@ -113,13 +108,14 @@ namespace Dominio
             }
         }
 
-        // Aprovechando POLIMORFISMO
-
+        // POLIMORFISMO
         public override string ToString()
         {
             string datosSospechoso = "";
 
-            datosSospechoso += $" Sospechoso -> Id: {Id} Nombre: {Nombre} CI: {Cedula} Nacimiento: {FechaNacimiento} Tiene antecedentes: {TieneAntecedentes} \n\n";
+            datosSospechoso += $"--------------------------------\n";
+            datosSospechoso += $" Sospechoso: \n > Id: {Id} \n > Nombre: {Nombre} \n CI: {Cedula} \n Nacimiento: {FechaNacimiento} \n Tiene antecedentes: {TieneAntecedentes} \n\n";
+            datosSospechoso += $"--------------------------------\n\n";
 
             return datosSospechoso;
         }
@@ -128,8 +124,6 @@ namespace Dominio
         {
             return obj is Sospechoso sosp && Cedula == sosp.Cedula;
         }
-
-
 
     }
 }

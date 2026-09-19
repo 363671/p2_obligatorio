@@ -6,7 +6,7 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Dominio
 {
-    public class Evidencia
+    public abstract class Evidencia
     {
         // ATRIBUTOS y PROPERTIES
         public static int UltimoId { get; set; } = 0;
@@ -39,7 +39,8 @@ namespace Dominio
 
         private void ValidarFechaRecoleccion()
         {
-            throw new NotImplementedException();
+            // validar que no sea mayor a la fecha de hoy / que no sea de hace mucho tiempo / etc
+            //throw new NotImplementedException();
         }
 
         private void ValidarDescripcion()
@@ -49,32 +50,35 @@ namespace Dominio
             if (Descripcion.IsWhiteSpace())
             {
                 errores += "El largo de la Descripcion no puede ser nulo.";
-
             }
 
-            if (Descripcion.Length < 20)
+            if (Descripcion.Length < 30)
             {
                 errores += "El largo de la Descripcion no puede ser menor a 20 caracteres.";
-
             }
 
             if (errores != "")
             {
                 Console.WriteLine("");
                 throw new Exception(" < Ha ocurrido un error / Descripcion / > ");
+                throw new Exception($" < {errores} > ");
             }
         }
 
         // Aprovechando POLIMORFISMO
         public override string ToString()
         {
-            string datosSospechoso = "";
+            string datosEvidencia = "";
 
-            datosSospechoso += $" Evidencia -> Id: {Id} Recolectado: {FechaRecoleccion} Descripcion: {Descripcion}\n\n";
+            datosEvidencia += $"\n------------------------------------------------------------------------------------------\n"; 
+            datosEvidencia += $" Evidencia: \n > Id: {Id} \n > Recolectado: {FechaRecoleccion} \n > Descripcion: {Descripcion} \n";
+            datosEvidencia += $"------------------------------------------------------------------------------------------";
+            datosEvidencia += $"\n\n";
 
-            return datosSospechoso;
+            return datosEvidencia;
         }
 
-
+        
+        //
     }
 }

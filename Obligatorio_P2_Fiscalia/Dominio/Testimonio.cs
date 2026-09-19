@@ -14,19 +14,25 @@ namespace Dominio
         public Credibilidad IndiceCredibilidad { get; set; }
 
         // CTOR
-        public Testimonio(string nombreTestigo, Credibilidad indiceCredibilidad)
+        public Testimonio()
+        {
+            
+        }
+        
+        public Testimonio(string nombreTestigo, Credibilidad indiceCredibilidad, DateTime fechaRecoleccion, string descripcion) : base(fechaRecoleccion, descripcion)
         {
             NombreTestigo = nombreTestigo;
             IndiceCredibilidad = indiceCredibilidad;
+            ValidarDatos();
         }
 
+        // VALIDACIONES
         public void ValidarDatos()
         {
             ValidarNombreTestigo();
-            ValidarIndiceCredibilidad();
-
         }
 
+        // Se valida que el nombre no sea Nulo y que no supere los 90 caracteres
         private void ValidarNombreTestigo()
         {
             string errores = "";
@@ -46,18 +52,14 @@ namespace Dominio
             if (errores != "")
             {
                 Console.WriteLine("");
-                throw new Exception(" < Ha ocurrido un error / Nombre Testigo / > ");
+                throw new Exception(" < Ha ocurrido un error / Nombre del Testigo / > ");
             }
         }
 
-        // revisar redundancia
-        private void ValidarIndiceCredibilidad()
+        public override string ToString()
         {
-            if(IndiceCredibilidad != Credibilidad.Bajo)
-            {
-                Console.WriteLine("");
-                throw new Exception(" < Ha ocurrido un error / Credibilidad / > ");
-            }
+            return $"    Testigo: {NombreTestigo} / Credibilidad: {IndiceCredibilidad}";
         }
+
     }
 }

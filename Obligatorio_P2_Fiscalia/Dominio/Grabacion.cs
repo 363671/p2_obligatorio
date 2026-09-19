@@ -13,18 +13,22 @@ namespace Dominio
         public bool InFraganti { get; set; }
 
         // CTOR
-        public Grabacion(int calidad, bool inFraganti)
+        public Grabacion()
+        {
+        
+        }
+
+        public Grabacion(int calidad, bool inFraganti, DateTime fechaRecoleccion, string descripcion) : base(fechaRecoleccion, descripcion)
         {
             Calidad = calidad;
             InFraganti = inFraganti;
             ValidarDatos();
         }
 
+        // Se genera el método general ValidarDatos() como buena practica
         public void ValidarDatos()
         {
             ValidarCalidad();
-            ValidarInFraganti();
-
         }
 
         private void ValidarCalidad()
@@ -34,13 +38,20 @@ namespace Dominio
                 throw new Exception(" < Ha ocurrido un error / Calidad Grabacion / > ");
             }
         }
-        
-        private void ValidarInFraganti()
+
+        // POLIMORFISMO
+        public override string ToString()
         {
-            //if (InFraganti)
-            //{
-            //    throw new Exception(" < Ha ocurrido un error / InFraganti Grabacion / > ");
-            //}
+            string resultado = $"\n < La CALIDAD es {Calidad} de 5 > \n";
+
+            if (InFraganti)
+            {
+                return resultado += $"\n < La GRABACION fue InFraganti > \n";
+            }
+
+            return resultado += $"\n < La GRABACION NO fue InFraganti > \n";
         }
+
+        //
     }
 }

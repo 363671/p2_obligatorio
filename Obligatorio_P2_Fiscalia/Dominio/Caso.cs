@@ -16,11 +16,11 @@ namespace Dominio
         public Investigador InvestigadorD { get; set; }
         public List<Evidencia> _evidenciasDelCaso { get; set; } = new List<Evidencia>();
 
-        // CONSTRUCTOR
+        // CTOR
         public Caso()
         {
             Id = ++UltimoId;
-            ValidarTipoInvestigador();
+            ValidarDatos();
         }
 
         public Caso(string nombre, string descripcion, bool activo, Sospechoso sospechoso, Investigador investigadorD)
@@ -31,22 +31,38 @@ namespace Dominio
             Activo = activo;
             SospechosoPrincipal = sospechoso;
             InvestigadorD = investigadorD;
-            ValidarTipoInvestigador();
+            ValidarDatos();
         }
 
-        // MÉTODOS
         public void AgregarEvidencia(Evidencia e)
         {
             _evidenciasDelCaso.Add(e);
         }
 
-        // Valida que el Investigador a asignar al Caso sea Detective
-        private void ValidarTipoInvestigador()
+        private void ValidarDatos()
+        {
+            //ValidarActivo();
+            //ValidarSospechoso();
+            ValidarInvestigador();
+        }
+
+        //private void ValidarActivo()
+        //{
+        //    throw new Exception(" < > ");
+
+        //}
+
+        //private void ValidarSospechoso()
+        //{
+        //    throw new Exception(" < > ");
+        //}
+
+        private void ValidarInvestigador()
         {
             if(InvestigadorD.Rol == Rol.Fiscal)
             {
                 Console.WriteLine("");
-                throw new Exception(" < Ha ocurrido un error / Investigador es Fiscal, no Detective / > ");
+                // throw new Exception(" < Ha ocurrido un error / Investigador es Fiscal, no Detective / > ");
             }
         }
 
@@ -54,28 +70,29 @@ namespace Dominio
 
         public override string ToString()
         {
-            string datosCaso = "------------------------------------------------------------------------";
+            string datosCaso = "\n------------------------------------------------------------------------";
 
-            datosCaso += $" Caso: \n";
+            datosCaso += $"\n Caso: \n";
             datosCaso += $"  -> Id: {Id} Nombre: {Nombre} \n";
-            datosCaso += $"  -> Descripcion: {Descripcion} \n";
-            datosCaso += $"";
-            datosCaso += $"  -> Sospechoso: <- \n";
-            datosCaso += $"  --> CI: {SospechosoPrincipal.Cedula} \n";
-            datosCaso += $"  --> Nombre: {SospechosoPrincipal.Nombre} \n";
-            datosCaso += $"  --> Fecha Nac.: {SospechosoPrincipal.FechaNacimiento} \n";
-            datosCaso += $"  -> Investigador: <- \n";
-            datosCaso += $"  --> Nombre: {InvestigadorD.Nombre} \n";
-            datosCaso += $"  --> Mail: {InvestigadorD.Mail} \n";
-            datosCaso += $"  --> Rol: {InvestigadorD.Rol} \n";
-            datosCaso += $"------------------------------------------------------------------------";
+            datosCaso += $"  Descripcion: {Descripcion} \n";
+            datosCaso += $"  Sospechoso: \n";
+            datosCaso += $"   -> CI: {SospechosoPrincipal.Cedula} \n";
+            datosCaso += $"   -> Nombre: {SospechosoPrincipal.Nombre} \n";
+            datosCaso += $"   -> Nac.: {SospechosoPrincipal.FechaNacimiento} \n";
+            datosCaso += $"   -> Tiene Antec.: {SospechosoPrincipal.TieneAntecedentes} \n";
+            datosCaso += $"  Evidencias: \n";
 
+            for (int i = 0; i < _evidenciasDelCaso.Count(); i++)
+            {
+                datosCaso += "    " + _evidenciasDelCaso[i].ToString();
+            }
+            
             return datosCaso;
         }
 
         public override bool Equals(object? obj)
         {
-            return obj is Caso caso && Id == caso.Id;
+            return obj is Caso caso && Nombre == caso.Nombre;
         }
 
     }

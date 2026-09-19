@@ -15,8 +15,7 @@ namespace Dominio
         public string Nombre { get; set; }
         public Rol Rol { get; set; }
 
-        // ctor
-
+        // CTOR
         public Investigador()
         {
             Id = ++UltimoId;
@@ -34,16 +33,14 @@ namespace Dominio
         }
 
         // METODOS
-
         private void ValidarDatos()
         {
-
             ValidarMail();
             ValidarContrasena();
             ValidarNombre();
             ValidarRol();
         }
-
+        
         private void ValidarMail()
         {
             string errores = "";
@@ -152,11 +149,9 @@ namespace Dominio
             return false;
         }
 
-        
-
         private void ValidarRol()
         {
-            if (Rol != Rol.Detective || Rol != Rol.Fiscal)
+            if (Rol != Rol.Detective && Rol != Rol.Fiscal)
             {
                 Console.WriteLine("");
                 throw new Exception(" < Ha ocurrido un error / Rol / > ");
@@ -164,7 +159,6 @@ namespace Dominio
         }
 
         // Aprovechando POLIMORFISMO
-
         public override string ToString()
         {
             string datosInvestigador = "";

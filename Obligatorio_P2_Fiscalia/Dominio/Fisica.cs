@@ -12,12 +12,21 @@ namespace Dominio
         public bool TieneHuellasDigitales { get; set; }
 
         // CTOR
-        public Fisica(bool tieneHuellas)
+        public Fisica(bool tieneHuellas, DateTime fechaRecoleccion, string descripcion) : base (fechaRecoleccion, descripcion)
         {
             TieneHuellasDigitales = tieneHuellas;
         }
 
+        // POLIMORFISMO
+        public override string ToString()
+        {
+            if (TieneHuellasDigitales)
+            {
+                return $"\n < La evidencia TIENE huellas del SOSPECHOSO > ";
+            }
 
+            return $"\n < La evidencia NO tiene huellas del SOSPECHOSO > ";
+        }
 
     }
 }
