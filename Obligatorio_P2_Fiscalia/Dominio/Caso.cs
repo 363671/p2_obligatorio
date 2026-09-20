@@ -66,8 +66,6 @@ namespace Dominio
             }
         }
 
-        // Aprovechando POLIMORFISMO
-
         public override string ToString()
         {
             string datosCaso = "\n------------------------------------------------------------------------";
@@ -75,18 +73,14 @@ namespace Dominio
             datosCaso += $"\n Caso: \n";
             datosCaso += $"  -> Id: {Id} Nombre: {Nombre} \n";
             datosCaso += $"  Descripcion: {Descripcion} \n";
-            datosCaso += $"  Sospechoso: \n";
-            datosCaso += $"   -> CI: {SospechosoPrincipal.Cedula} \n";
-            datosCaso += $"   -> Nombre: {SospechosoPrincipal.Nombre} \n";
-            datosCaso += $"   -> Nac.: {SospechosoPrincipal.FechaNacimiento} \n";
-            datosCaso += $"   -> Tiene Antec.: {SospechosoPrincipal.TieneAntecedentes} \n";
+            datosCaso += $"{SospechosoPrincipal.ToString()}";
             datosCaso += $"  Evidencias: \n";
 
             for (int i = 0; i < _evidenciasDelCaso.Count(); i++)
             {
                 datosCaso += "    " + _evidenciasDelCaso[i].ToString();
             }
-            
+
             return datosCaso;
         }
 

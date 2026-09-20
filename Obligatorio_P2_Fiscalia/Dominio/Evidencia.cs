@@ -10,9 +10,9 @@ namespace Dominio
     {
         // ATRIBUTOS y PROPERTIES
         public static int UltimoId { get; set; } = 0;
-        public int Id { get; set; }
+        protected int Id { get; set; }
         public DateTime FechaRecoleccion { get; set; }
-        public string Descripcion { get; set; }
+        protected string Descripcion { get; set; }
 
 
         // ctor
@@ -70,10 +70,7 @@ namespace Dominio
         {
             string datosEvidencia = "";
 
-            datosEvidencia += $"\n------------------------------------------------------------------------------------------\n"; 
-            datosEvidencia += $" Evidencia: \n > Id: {Id} \n > Recolectado: {FechaRecoleccion} \n > Descripcion: {Descripcion} \n";
-            datosEvidencia += $"------------------------------------------------------------------------------------------";
-            datosEvidencia += $"\n\n";
+            datosEvidencia += $"     | Id: {Id} > Descripcion: {Descripcion} \n\n";
 
             return datosEvidencia;
         }

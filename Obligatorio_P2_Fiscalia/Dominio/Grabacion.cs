@@ -42,14 +42,22 @@ namespace Dominio
         // POLIMORFISMO
         public override string ToString()
         {
-            string resultado = $"\n < La CALIDAD es {Calidad} de 5 > \n";
+            string evidencia = " ----------------- Evidencia > Grabacion ----------------- ";
+
+            evidencia += $"\n     | La CALIDAD es {Calidad} de 5 | ";
 
             if (InFraganti)
             {
-                return resultado += $"\n < La GRABACION fue InFraganti > \n";
+                evidencia += $"La GRABACION fue In Fraganti |\n";
+                evidencia += base.ToString();
+
+                return evidencia;
             }
 
-            return resultado += $"\n < La GRABACION NO fue InFraganti > \n";
+            evidencia += $"La GRABACION NO fue In Fraganti |\n";
+            evidencia += base.ToString();
+
+            return evidencia;
         }
 
         //

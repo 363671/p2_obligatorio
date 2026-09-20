@@ -7,6 +7,10 @@
       "RelativeMoniker": "D:0:0:{12F3CF19-F88C-0774-969F-8840F52C7312}|Dominio\\Dominio.csproj|solutionrelative:dominio\\sistema.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{12F3CF19-F88C-0774-969F-8840F52C7312}|Dominio\\Dominio.csproj|c:\\users\\diegu\\onedrive - facultad de ingenieria - universidad ort uruguay\\p2\\1 obligatorio\\obligatorio_p2_fiscalia\\dominio\\testimonio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12F3CF19-F88C-0774-969F-8840F52C7312}|Dominio\\Dominio.csproj|solutionrelative:dominio\\testimonio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{12F3CF19-F88C-0774-969F-8840F52C7312}|Dominio\\Dominio.csproj|c:\\users\\diegu\\onedrive - facultad de ingenieria - universidad ort uruguay\\p2\\1 obligatorio\\obligatorio_p2_fiscalia\\dominio\\grabacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{12F3CF19-F88C-0774-969F-8840F52C7312}|Dominio\\Dominio.csproj|solutionrelative:dominio\\grabacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -15,28 +19,12 @@
       "RelativeMoniker": "D:0:0:{12F3CF19-F88C-0774-969F-8840F52C7312}|Dominio\\Dominio.csproj|solutionrelative:dominio\\fisica.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{12F3CF19-F88C-0774-969F-8840F52C7312}|Dominio\\Dominio.csproj|c:\\users\\diegu\\onedrive - facultad de ingenieria - universidad ort uruguay\\p2\\1 obligatorio\\obligatorio_p2_fiscalia\\dominio\\caso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{12F3CF19-F88C-0774-969F-8840F52C7312}|Dominio\\Dominio.csproj|solutionrelative:dominio\\caso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{12F3CF19-F88C-0774-969F-8840F52C7312}|Dominio\\Dominio.csproj|c:\\users\\diegu\\onedrive - facultad de ingenieria - universidad ort uruguay\\p2\\1 obligatorio\\obligatorio_p2_fiscalia\\dominio\\testimonio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{12F3CF19-F88C-0774-969F-8840F52C7312}|Dominio\\Dominio.csproj|solutionrelative:dominio\\testimonio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{12F3CF19-F88C-0774-969F-8840F52C7312}|Dominio\\Dominio.csproj|c:\\users\\diegu\\onedrive - facultad de ingenieria - universidad ort uruguay\\p2\\1 obligatorio\\obligatorio_p2_fiscalia\\dominio\\evidencia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{12F3CF19-F88C-0774-969F-8840F52C7312}|Dominio\\Dominio.csproj|solutionrelative:dominio\\evidencia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5B286F5E-1DA4-C61D-7861-80C46E44F0B3}|UI\\UI.csproj|c:\\users\\diegu\\onedrive - facultad de ingenieria - universidad ort uruguay\\p2\\1 obligatorio\\obligatorio_p2_fiscalia\\ui\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5B286F5E-1DA4-C61D-7861-80C46E44F0B3}|UI\\UI.csproj|solutionrelative:ui\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{12F3CF19-F88C-0774-969F-8840F52C7312}|Dominio\\Dominio.csproj|c:\\users\\diegu\\onedrive - facultad de ingenieria - universidad ort uruguay\\p2\\1 obligatorio\\obligatorio_p2_fiscalia\\dominio\\sospechoso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{12F3CF19-F88C-0774-969F-8840F52C7312}|Dominio\\Dominio.csproj|solutionrelative:dominio\\sospechoso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{12F3CF19-F88C-0774-969F-8840F52C7312}|Dominio\\Dominio.csproj|c:\\users\\diegu\\onedrive - facultad de ingenieria - universidad ort uruguay\\p2\\1 obligatorio\\obligatorio_p2_fiscalia\\dominio\\investigador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{12F3CF19-F88C-0774-969F-8840F52C7312}|Dominio\\Dominio.csproj|solutionrelative:dominio\\investigador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -56,7 +44,7 @@
               "RelativeDocumentMoniker": "Dominio\\Sistema.cs",
               "ToolTip": "C:\\Users\\diegu\\OneDrive - Facultad de Ingenieria - Universidad ORT Uruguay\\P2\\1 Obligatorio\\Obligatorio_P2_Fiscalia\\Dominio\\Sistema.cs",
               "RelativeToolTip": "Dominio\\Sistema.cs",
-              "ViewState": "AgIAAGYAAAAAAAAAAAAkwHgAAAAjAAAAAAAAAA==",
+              "ViewState": "AgIAAMkCAAAAAAAAAADwv9ICAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-09-13T20:33:18.251Z",
               "IsPinned": true,
@@ -64,105 +52,77 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 5,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\diegu\\OneDrive - Facultad de Ingenieria - Universidad ORT Uruguay\\P2\\1 Obligatorio\\Obligatorio_P2_Fiscalia\\UI\\Program.cs",
               "RelativeDocumentMoniker": "UI\\Program.cs",
               "ToolTip": "C:\\Users\\diegu\\OneDrive - Facultad de Ingenieria - Universidad ORT Uruguay\\P2\\1 Obligatorio\\Obligatorio_P2_Fiscalia\\UI\\Program.cs",
               "RelativeToolTip": "UI\\Program.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAgwCcAAAAdAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAA9wBYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-09-17T03:13:50.056Z",
-              "IsPinned": true
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Evidencia.cs",
-              "DocumentMoniker": "C:\\Users\\diegu\\OneDrive - Facultad de Ingenieria - Universidad ORT Uruguay\\P2\\1 Obligatorio\\Obligatorio_P2_Fiscalia\\Dominio\\Evidencia.cs",
-              "RelativeDocumentMoniker": "Dominio\\Evidencia.cs",
-              "ToolTip": "C:\\Users\\diegu\\OneDrive - Facultad de Ingenieria - Universidad ORT Uruguay\\P2\\1 Obligatorio\\Obligatorio_P2_Fiscalia\\Dominio\\Evidencia.cs",
-              "RelativeToolTip": "Dominio\\Evidencia.cs",
-              "ViewState": "AgIAAD4AAAAAAAAAAAAEwEgAAAB+AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-16T04:21:10.09Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Grabacion.cs",
-              "DocumentMoniker": "C:\\Users\\diegu\\OneDrive - Facultad de Ingenieria - Universidad ORT Uruguay\\P2\\1 Obligatorio\\Obligatorio_P2_Fiscalia\\Dominio\\Grabacion.cs",
-              "RelativeDocumentMoniker": "Dominio\\Grabacion.cs",
-              "ToolTip": "C:\\Users\\diegu\\OneDrive - Facultad de Ingenieria - Universidad ORT Uruguay\\P2\\1 Obligatorio\\Obligatorio_P2_Fiscalia\\Dominio\\Grabacion.cs",
-              "RelativeToolTip": "Dominio\\Grabacion.cs",
-              "ViewState": "AgIAAB8AAAAAAAAAAAAEwDkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-16T04:53:34.717Z"
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
+              "Title": "Evidencia.cs",
+              "DocumentMoniker": "C:\\Users\\diegu\\OneDrive - Facultad de Ingenieria - Universidad ORT Uruguay\\P2\\1 Obligatorio\\Obligatorio_P2_Fiscalia\\Dominio\\Evidencia.cs",
+              "RelativeDocumentMoniker": "Dominio\\Evidencia.cs",
+              "ToolTip": "C:\\Users\\diegu\\OneDrive - Facultad de Ingenieria - Universidad ORT Uruguay\\P2\\1 Obligatorio\\Obligatorio_P2_Fiscalia\\Dominio\\Evidencia.cs",
+              "RelativeToolTip": "Dominio\\Evidencia.cs",
+              "ViewState": "AgIAADEAAAAAAAAAAAAYwEgAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-20T01:54:14.829Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "Fisica.cs",
               "DocumentMoniker": "C:\\Users\\diegu\\OneDrive - Facultad de Ingenieria - Universidad ORT Uruguay\\P2\\1 Obligatorio\\Obligatorio_P2_Fiscalia\\Dominio\\Fisica.cs",
               "RelativeDocumentMoniker": "Dominio\\Fisica.cs",
               "ToolTip": "C:\\Users\\diegu\\OneDrive - Facultad de Ingenieria - Universidad ORT Uruguay\\P2\\1 Obligatorio\\Obligatorio_P2_Fiscalia\\Dominio\\Fisica.cs",
               "RelativeToolTip": "Dominio\\Fisica.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAABKAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-16T04:52:41.193Z"
+              "WhenOpened": "2026-09-19T20:53:48.171Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "Testimonio.cs",
               "DocumentMoniker": "C:\\Users\\diegu\\OneDrive - Facultad de Ingenieria - Universidad ORT Uruguay\\P2\\1 Obligatorio\\Obligatorio_P2_Fiscalia\\Dominio\\Testimonio.cs",
               "RelativeDocumentMoniker": "Dominio\\Testimonio.cs",
               "ToolTip": "C:\\Users\\diegu\\OneDrive - Facultad de Ingenieria - Universidad ORT Uruguay\\P2\\1 Obligatorio\\Obligatorio_P2_Fiscalia\\Dominio\\Testimonio.cs",
               "RelativeToolTip": "Dominio\\Testimonio.cs",
-              "ViewState": "AgIAAB0AAAAAAAAAAAAzwDwAAAAZAAAAAAAAAA==",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAIwD0AAABqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-16T04:55:34.056Z"
+              "WhenOpened": "2026-09-19T20:41:21.303Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Caso.cs",
-              "DocumentMoniker": "C:\\Users\\diegu\\OneDrive - Facultad de Ingenieria - Universidad ORT Uruguay\\P2\\1 Obligatorio\\Obligatorio_P2_Fiscalia\\Dominio\\Caso.cs",
-              "RelativeDocumentMoniker": "Dominio\\Caso.cs",
-              "ToolTip": "C:\\Users\\diegu\\OneDrive - Facultad de Ingenieria - Universidad ORT Uruguay\\P2\\1 Obligatorio\\Obligatorio_P2_Fiscalia\\Dominio\\Caso.cs",
-              "RelativeToolTip": "Dominio\\Caso.cs",
-              "ViewState": "AgIAADkAAAAAAAAAAAAAAFYAAAAmAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "Grabacion.cs",
+              "DocumentMoniker": "C:\\Users\\diegu\\OneDrive - Facultad de Ingenieria - Universidad ORT Uruguay\\P2\\1 Obligatorio\\Obligatorio_P2_Fiscalia\\Dominio\\Grabacion.cs",
+              "RelativeDocumentMoniker": "Dominio\\Grabacion.cs",
+              "ToolTip": "C:\\Users\\diegu\\OneDrive - Facultad de Ingenieria - Universidad ORT Uruguay\\P2\\1 Obligatorio\\Obligatorio_P2_Fiscalia\\Dominio\\Grabacion.cs",
+              "RelativeToolTip": "Dominio\\Grabacion.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAAIwDgAAAA+AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-16T04:50:19.277Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Sospechoso.cs",
-              "DocumentMoniker": "C:\\Users\\diegu\\OneDrive - Facultad de Ingenieria - Universidad ORT Uruguay\\P2\\1 Obligatorio\\Obligatorio_P2_Fiscalia\\Dominio\\Sospechoso.cs",
-              "RelativeDocumentMoniker": "Dominio\\Sospechoso.cs",
-              "ToolTip": "C:\\Users\\diegu\\OneDrive - Facultad de Ingenieria - Universidad ORT Uruguay\\P2\\1 Obligatorio\\Obligatorio_P2_Fiscalia\\Dominio\\Sospechoso.cs",
-              "RelativeToolTip": "Dominio\\Sospechoso.cs",
-              "ViewState": "AgIAAF4AAAAAAAAAAAAnwG8AAAAfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-16T04:19:59.178Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Investigador.cs",
-              "DocumentMoniker": "C:\\Users\\diegu\\OneDrive - Facultad de Ingenieria - Universidad ORT Uruguay\\P2\\1 Obligatorio\\Obligatorio_P2_Fiscalia\\Dominio\\Investigador.cs",
-              "RelativeDocumentMoniker": "Dominio\\Investigador.cs",
-              "ToolTip": "C:\\Users\\diegu\\OneDrive - Facultad de Ingenieria - Universidad ORT Uruguay\\P2\\1 Obligatorio\\Obligatorio_P2_Fiscalia\\Dominio\\Investigador.cs",
-              "RelativeToolTip": "Dominio\\Investigador.cs",
-              "ViewState": "AgIAAFMAAAAAAAAAAAAvwF8AAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-17T03:29:57.159Z"
+              "WhenOpened": "2026-09-19T20:50:06.875Z",
+              "EditorCaption": ""
             }
           ]
         }

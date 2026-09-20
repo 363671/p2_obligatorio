@@ -20,12 +20,19 @@ namespace Dominio
         // POLIMORFISMO
         public override string ToString()
         {
+            string evidencia = " ----------------- Evidencia > Fisica ----------------- ";
+
             if (TieneHuellasDigitales)
             {
-                return $"\n < La evidencia TIENE huellas del SOSPECHOSO > ";
+                evidencia += $"\n     | La evidencia TIENE huellas del SOSPECHOSO | \n";
+                evidencia += base.ToString();
+                return evidencia;
             }
 
-            return $"\n < La evidencia NO tiene huellas del SOSPECHOSO > ";
+            evidencia += $"\n     | La evidencia NO tiene huellas del SOSPECHOSO | \n";
+            evidencia += base.ToString();
+            
+            return evidencia;
         }
 
     }

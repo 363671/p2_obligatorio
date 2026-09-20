@@ -108,14 +108,27 @@ namespace Dominio
             }
         }
 
+        public string AntecedentesAString(bool antec)
+        {
+            if (antec)
+            {
+                return "SI";
+            }
+
+            return "NO";
+        }
+
         // POLIMORFISMO
+        
+
         public override string ToString()
         {
             string datosSospechoso = "";
-
-            datosSospechoso += $"--------------------------------\n";
-            datosSospechoso += $" Sospechoso: \n > Id: {Id} \n > Nombre: {Nombre} \n CI: {Cedula} \n Nacimiento: {FechaNacimiento} \n Tiene antecedentes: {TieneAntecedentes} \n\n";
-            datosSospechoso += $"--------------------------------\n\n";
+            datosSospechoso += $"  Sospechoso: \n";
+            datosSospechoso += $"   -> CI: {Cedula} \n";
+            datosSospechoso += $"   -> Nombre: {Nombre} \n";
+            datosSospechoso += $"   -> Nac.: {FechaNacimiento} \n";
+            datosSospechoso += $"   -> Tiene Antec.: {AntecedentesAString(TieneAntecedentes)} \n";
 
             return datosSospechoso;
         }

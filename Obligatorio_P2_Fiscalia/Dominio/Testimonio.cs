@@ -58,7 +58,11 @@ namespace Dominio
 
         public override string ToString()
         {
-            return $"    Testigo: {NombreTestigo} / Credibilidad: {IndiceCredibilidad}";
+            string evidencia = " ----------------- Evidencia > Testimonio ----------------- ";
+            evidencia += $"\n     | Testigo: {NombreTestigo} / Ind. Credibilidad: {IndiceCredibilidad} |\n";
+            evidencia += base.ToString();
+
+            return evidencia;
         }
 
     }
