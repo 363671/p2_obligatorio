@@ -26,8 +26,13 @@ namespace Dominio
             ValidarDatos();
         }
 
-        // VALIDACIONES
-        public void ValidarDatos()
+        // // // // // // // // // // // // // // // // //
+        //                                              //
+        //                   METODOS                    //
+        //                                              //
+        // // // // // // // // // // // // // // // // //
+
+        public override void ValidarDatos()
         {
             ValidarNombreTestigo();
         }
@@ -55,6 +60,25 @@ namespace Dominio
                 throw new Exception(" < Ha ocurrido un error / Nombre del Testigo / > ");
             }
         }
+
+        public override int CalcularPesoEvidencia()
+        {
+            int ptos = 0;
+            
+            if(IndiceCredibilidad == Credibilidad.Medio ||
+                IndiceCredibilidad == Credibilidad.Alto)
+            {
+                ptos += 10;
+            }
+
+            return base.CalcularPesoEvidencia() + ptos;
+        }
+
+        // // // // // // // // // // // // // // // // //
+        //                                              //
+        //                POLIMORFISMO                  //
+        //                                              //
+        // // // // // // // // // // // // // // // // //
 
         public override string ToString()
         {

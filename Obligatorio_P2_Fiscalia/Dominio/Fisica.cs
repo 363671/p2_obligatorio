@@ -17,7 +17,31 @@ namespace Dominio
             TieneHuellasDigitales = tieneHuellas;
         }
 
-        // POLIMORFISMO
+        // // // // // // // // // // // // // // // // //
+        //                                              //
+        //                   METODOS                    //
+        //                                              //
+        // // // // // // // // // // // // // // // // //
+
+        public override int CalcularPesoEvidencia()
+        {
+            int ptos = 0;
+            
+            if (TieneHuellasDigitales)
+            {
+                ptos = 40;
+            }
+
+            // el base calcula la Fecha de Recoleccion y le suma ptos si tiene o no Huellas digitales
+            return base.CalcularPesoEvidencia() + ptos;
+        }
+
+        // // // // // // // // // // // // // // // // //
+        //                                              //
+        //                POLIMORFISMO                  //
+        //                                              //
+        // // // // // // // // // // // // // // // // //
+
         public override string ToString()
         {
             string evidencia = " ----------------- Evidencia > Fisica ----------------- ";

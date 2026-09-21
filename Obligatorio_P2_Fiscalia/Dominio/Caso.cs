@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -16,10 +17,19 @@ namespace Dominio
         public Investigador InvestigadorD { get; set; }
         public List<Evidencia> _evidenciasDelCaso { get; set; } = new List<Evidencia>();
 
-        // CTOR
+        // CONSTRUCTORES
         public Caso()
         {
             Id = ++UltimoId;
+            ValidarDatos();
+        }
+
+        public Caso(string nombre, string descripcion, bool activo)
+        {
+            Id = ++UltimoId;
+            Nombre = nombre;
+            Descripcion = descripcion;
+            Activo = activo;
             ValidarDatos();
         }
 
@@ -34,8 +44,15 @@ namespace Dominio
             ValidarDatos();
         }
 
+        // // // // // // // // // // // // // // // // //
+        //                                              //
+        //                   METODOS                    //
+        //                                              //
+        // // // // // // // // // // // // // // // // //
+
         public void AgregarEvidencia(Evidencia e)
         {
+            ValidarActivo();
             _evidenciasDelCaso.Add(e);
         }
 
@@ -46,25 +63,83 @@ namespace Dominio
             ValidarInvestigador();
         }
 
-        //private void ValidarActivo()
-        //{
-        //    throw new Exception(" < > ");
-
-        //}
-
-        //private void ValidarSospechoso()
-        //{
-        //    throw new Exception(" < > ");
-        //}
+        private void ValidarActivo()
+        {
+            if (!Activo)
+            {
+                throw new Exception(" < Ha ocurrido un error / El Caso se encuentra INACTIVO. > ");
+            }
+        }
 
         private void ValidarInvestigador()
         {
             if(InvestigadorD.Rol == Rol.Fiscal)
             {
-                Console.WriteLine("");
-                // throw new Exception(" < Ha ocurrido un error / Investigador es Fiscal, no Detective / > ");
+                throw new Exception(" < Ha ocurrido un error / Investigador es Fiscal, no Detective / > ");
             }
         }
+
+        public string ElaborarRecomendacion()
+        {
+            string recomendacion = "";
+            int puntaje = 0;
+            
+            // Aqui voy a agregar los calculos del puntaje
+            // !
+
+
+            if(puntaje < 30)
+            {
+                recomendacion = $"DESESTIMADO: El caso “[{Nombre}]“ carece de fundamentos. \n" +
+                                $"El peso de la prueba es [{puntaje}] y debería ser desestimado \n" +
+                                $"finalizando la investigación en contra de [{SospechosoPrincipal.Nombre}] \n";
+            }
+
+            if (puntaje >= 30 && puntaje < 70)
+            {
+                recomendacion = $"CONTINUAR INVESTIGANDO: El caso “[{Nombre}]” parece ir \n" +
+                                $"por el camino correcto, pero necesita más investigación. \n" +
+                                $"El peso de la prueba es [{puntaje}] pero aún no hay información \n" +
+                                $"suficiente para imputar a [{SospechosoPrincipal.Nombre}] \n";
+            }
+            
+            if (puntaje >= 70)
+            {
+                recomendacion = $"IMPUTACIÓN INMINENTE: El caso “[{Nombre}]” está resuelto. \n" +
+                                $"El peso de la prueba es [{puntaje}] \n" +
+                                $"y debería imputarse a [{SospechosoPrincipal.Nombre}] inmediatamente. \n";
+
+            }
+
+            return recomendacion;
+        }
+
+
+        // Se cuenta cuantas evidencias hay y se evalua su fecha de recol.
+        public int SumaDeEvidencias()
+        {
+            int peso = 0;
+
+            List<Evidencia> l = GetEvidenciasDelCaso();
+
+            foreach (Evidencia e in l)
+            {
+                peso += e.CalcularPesoEvidencia();
+            }
+
+            return peso;
+        }
+        
+        public List<Evidencia> GetEvidenciasDelCaso()
+        {
+            return _evidenciasDelCaso;
+        }
+
+        // // // // // // // // // // // // // // // // //
+        //                                              //
+        //                POLIMORFISMO                  //
+        //                                              //
+        // // // // // // // // // // // // // // // // //
 
         public override string ToString()
         {

@@ -29,9 +29,13 @@ namespace Dominio
             ValidarDatos();
         }
 
-        // METODOS
+        // // // // // // // // // // // // // // // // //
+        //                                              //
+        //                   METODOS                    //
+        //                                              //
+        // // // // // // // // // // // // // // // // //
 
-        public void ValidarDatos()
+        public virtual void ValidarDatos()
         {
             ValidarFechaRecoleccion();
             ValidarDescripcion();
@@ -40,7 +44,7 @@ namespace Dominio
         private void ValidarFechaRecoleccion()
         {
             // validar que no sea mayor a la fecha de hoy / que no sea de hace mucho tiempo / etc
-            //throw new NotImplementedException();
+            // throw new NotImplementedException();
         }
 
         private void ValidarDescripcion()
@@ -64,8 +68,34 @@ namespace Dominio
                 throw new Exception($" < {errores} > ");
             }
         }
+        
+        public virtual int CalcularPesoEvidencia()
+        {
+            return CalcularPesoPorAntiguedad();
+        }
 
-        // Aprovechando POLIMORFISMO
+        private int CalcularPesoPorAntiguedad()
+        {
+            // por defecto el peso es 3
+            int peso = 3;
+
+            DateTime fechaLimite = DateTime.Now.AddMonths(-6);
+
+            // si la Evidencia tiene menos de 6 meses el peso es 5
+            if (FechaRecoleccion > fechaLimite)
+            {
+                peso = 5;
+            }
+
+            return peso;
+        }
+
+        // // // // // // // // // // // // // // // // //
+        //                                              //
+        //                POLIMORFISMO                  //
+        //                                              //
+        // // // // // // // // // // // // // // // // //
+
         public override string ToString()
         {
             string datosEvidencia = "";

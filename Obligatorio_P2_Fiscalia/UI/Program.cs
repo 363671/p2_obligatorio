@@ -19,6 +19,7 @@ namespace UI
                 try
                 {
                     s.MenuInicial();
+
                     int eleccion = int.Parse(Console.ReadLine());
 
                     switch (eleccion)
@@ -53,18 +54,29 @@ namespace UI
                             string nombre = Console.ReadLine();
 
                             s.OpcionInicial3SolicitaCI();
+                            Console.WriteLine($" Llevas 1/4 datos -> Nombre: {nombre} \n");
                             string ci = Console.ReadLine();
 
                             s.OpcionInicial3SolicitaFechaDeNac();
+                            Console.WriteLine($" Llevas 2/4 datos -> Nombre: {nombre} / CI: {ci} \n");
+
                             DateTime fechaNac = DateTime.Parse(Console.ReadLine());
 
-                            s.ValidarSospechoso(nombre, ci, fechaNac);
+                            s.Opcion3SolicitaAntecedentes();
+                            Console.WriteLine($" Llevas 3/4 datos -> Nombre: {nombre} / CI: {ci} / Fecha Nac.: {fechaNac}\n");
+                            
+                            string antec = Console.ReadLine();
+                            Console.WriteLine($" Llevas 4/4 datos -> Nombre: {nombre} / CI: {ci} / Fecha Nac.: {fechaNac} / Antecedentes: {antec} \n");
+
+                            s.ValidarSospechoso(nombre, ci, fechaNac, antec);
+
+                            s.Op3AltaExitosa();
                             break;
 
                         //CASO 4
                         case 4:
                             s.OpcionInicial4();
-                            s.MostrarSospechososConAntecedentes();
+                            Console.WriteLine(s.MostrarSospechososConAntecedentes());
                             break;
 
                         //CASO 5
@@ -76,7 +88,6 @@ namespace UI
                             break;
 
                     }
-                        
 
                     Console.ReadKey();
                 }

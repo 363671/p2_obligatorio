@@ -1,0 +1,8 @@
+metodos virtuales / diferencia con metodos abstractos
+
+casteo de objetos
+
+GetType().Name
+
+
+if var is NombreObjecto > if var is Auto

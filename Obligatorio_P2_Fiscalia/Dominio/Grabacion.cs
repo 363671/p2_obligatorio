@@ -25,8 +25,14 @@ namespace Dominio
             ValidarDatos();
         }
 
+        // // // // // // // // // // // // // // // // //
+        //                                              //
+        //                   METODOS                    //
+        //                                              //
+        // // // // // // // // // // // // // // // // //
+
         // Se genera el método general ValidarDatos() como buena practica
-        public void ValidarDatos()
+        public override void ValidarDatos()
         {
             ValidarCalidad();
         }
@@ -39,7 +45,36 @@ namespace Dominio
             }
         }
 
-        // POLIMORFISMO
+        public override int CalcularPesoEvidencia()
+        {
+            int ptos = 0;
+
+            // CONSULTAR AL PROFE SI ESTE CALCULO DEBE SER ANIDADO
+            /*
+                Si la evidencia es una grabación que registra al sospechoso en infraganti delito, se le suman 60
+                puntos. Además, si la calidad es superior o igual a 3, suma 10 más.
+            */
+
+            if (InFraganti)
+            {
+                ptos += 40;
+            }
+
+            if (Calidad >= 3)
+            {
+                ptos += 10;
+            }
+
+            return base.CalcularPesoEvidencia() + ptos;
+        }
+
+
+        // // // // // // // // // // // // // // // // //
+        //                                              //
+        //                POLIMORFISMO                  //
+        //                                              //
+        // // // // // // // // // // // // // // // // //
+
         public override string ToString()
         {
             string evidencia = " ----------------- Evidencia > Grabacion ----------------- ";

@@ -452,22 +452,29 @@ namespace Dominio
                 if (s.TieneAntecedentes)
                 {
                     textoConSospechosos += s.ToString();
+                    textoConSospechosos += "\n";
                 }
             }
 
             return textoConSospechosos;
         }
 
-
-        public void ValidarSospechoso(string nombre, string ci, DateTime fechaNac)
+        public void ValidarSospechoso(string nombre, string ci, DateTime fechaNac, string antec)
         {
-            ValidarTexto(nombre);
-            ValidarTexto(ci);
+            ValidarNombre(nombre);
+            ValidarCi(ci);
             ValidarFecha(fechaNac);
+            ValidarAntecedentes(antec);
+        }
 
-            string test = "";
+        private void ValidarAntecedentes(string antec)
+        {
+            antec = antec.ToUpper();
 
-            DateTime fec = DateTime.Parse(test);
+            if (antec != "S" && antec != "N")
+            {
+                throw new Exception(" < Ha ocurrido un error / Opcion invalida de Antecedentes > ");
+            }
         }
 
         private void ValidarFecha(DateTime fechaNac)
@@ -476,26 +483,40 @@ namespace Dominio
 
             if (fechaNac > fechaLimite) 
             {
-            
+                throw new Exception(" < Ha ocurrido un error / La Fecha de nac. es de un menor de 12 anhos > ");
             }
         }
 
-        public string ValidarTexto(string t)
+        public void ValidarNombre(string n)
         {
-            string errores = "";
-
-            if (t.IsWhiteSpace())
+            if (n.IsWhiteSpace())
             {
-                errores += "El largo del texto no puede ser nulo. ";
+                throw new Exception(" < Ha ocurrido un error / El largo del nombre no puede ser nulo. > ");
             }
 
-            if (t.Length > 90)
+            if (n.Length > 90)
             {
-                errores += "El largo del texto no puede superar los 90 caracteres.";
+                throw new Exception(" < Ha ocurrido un error / El largo del nombre no puede superar los 90 caracteres. > ");
 
             }
+        }
 
-            return $" \n {errores} \n";
+        public void ValidarCi(string c)
+        {
+            if (c.IsWhiteSpace())
+            {
+                throw new Exception(" < Ha ocurrido un error / El largo de la CI no puede ser nulo. > ");
+            }
+
+            if (c.Length > 11)
+            {
+                throw new Exception(" < Ha ocurrido un error / El largo la CI no puede superar los 11 caracteres. > ");
+            }
+
+            if (c.Length < 9)
+            {
+                throw new Exception(" < Ha ocurrido un error / El largo la CI no puede ser menor a 8 caracteres. > ");
+            }
         }
 
         // // // // // // // // // // // // // // // // //
@@ -508,11 +529,11 @@ namespace Dominio
         {
             string vista = "";
 
-            vista += $"\n      Obligatorio 1 - P2";
-            vista += $"\n      Sistema de Fiscalía";
-            vista += $"\n          Diego Weble";
-            vista += $"\n              N2A \n";
-            vista += $"\n < Presiona una tecla para empezar > \n";
+            vista += $"\n |             Obligatorio 1 - P2              |";
+            vista += $"\n              Sistema de Fiscalía";
+            vista += $"\n                  Diego Weble";
+            vista += $"\n                      N2A \n";
+            vista += $"\n <       Presiona una tecla para empezar      > \n";
 
             Console.Clear();
             Console.WriteLine(vista);
@@ -617,6 +638,7 @@ namespace Dominio
 
             // listado de CASOS del INVESTIGADOR
 
+            Console.Clear();
             Console.WriteLine(vista);
         }
 
@@ -636,6 +658,7 @@ namespace Dominio
             vista += $"\n <      Presiona ENTER para ingresar otro mail      > \n";
             vista += $"\n <        Presiona ESC para volver al Inicio        > \n";
 
+            Console.Clear();
             Console.WriteLine(vista);
         }
 
@@ -654,6 +677,7 @@ namespace Dominio
             vista += $"\n   3 - Alta de un Sospechoso \n";
             vista += $"\n <   Ingresa el Nombre Completo:  > \n";
 
+            Console.Clear();
             Console.WriteLine(vista);
         }
 
@@ -668,6 +692,7 @@ namespace Dominio
             vista += $"\n <   Presiona ENTER para ingresar un NOMBRE   > \n";
             vista += $"\n <     Presiona ESC para volver al Inicio     > \n";
 
+            Console.Clear();
             Console.WriteLine(vista);
         }
 
@@ -678,10 +703,11 @@ namespace Dominio
         {
             string vista = "";
 
-            vista += $"\n <     Elegiste     >";
-            vista += $"\n 3 - Alta de un Sospechoso \n";
-            vista += $"\n < Ingresa la Cedula: > \n";
+            vista += $"\n <          Elegiste          >";
+            vista += $"\n   3 - Alta de un Sospechoso \n";
+            vista += $"\n <     Ingresa la Cedula:     > \n";
 
+            Console.Clear();
             Console.WriteLine(vista);
         }
 
@@ -692,10 +718,11 @@ namespace Dominio
         {
             string vista = "";
 
-            vista += $"\n <     Elegiste     >";
-            vista += $"\n 3 - Alta de un Sospechoso \n";
+            vista += $"\n <            Elegiste             >";
+            vista += $"\n    3 - Alta de un Sospechoso \n";
             vista += $"\n < Ingresaste una Cedula Inválida: > \n";
 
+            Console.Clear();
             Console.WriteLine(vista);
         }
 
@@ -706,16 +733,17 @@ namespace Dominio
         {
             string vista = "";
 
-            vista += $"\n <     Elegiste     >";
-            vista += $"\n 3 - Alta de un Sospechoso \n";
-            vista += $"\n < Ingresa la Fecha de Nacimiento: > \n";
+            vista += $"\n <                      Elegiste                      >";
+            vista += $"\n               3 - Alta de un Sospechoso \n";
+            vista += $"\n < Ingresa la Fecha de Nacimiento: FORMATO AAAA/MM/DD > \n";
 
+            Console.Clear();
             Console.WriteLine(vista);
         }
 
-        // // // // // // // // // // // //
+        // // // // // // // // // // // // // // // // // // // // // 
         // Opcion 3 - Alta de un Sospechoso - se pide la FECHA de NAC.
-        // // // // // // // // // // // // //
+        // // // // // // // // // // // // // // // // // // // // //
         public void OpcionInicial3FechaNacInvalida()
         {
             string vista = "";
@@ -723,10 +751,11 @@ namespace Dominio
             vista += $"\n <                 Elegiste                >";
             vista += $"\n         3 - Alta de un Sospechoso \n";
             vista += $"\n <  Ingresaste una FECHA de NAC. invalida: > \n";
-            vista += $"\n \n";
+            vista += $"\n ";
             vista += $"\n < Presiona ENTER para ingresar otra FECHA > \n";
             vista += $"\n < Presiona ESC para volver al Inicio > \n";
 
+            Console.Clear();
             Console.WriteLine(vista);
         }
 
@@ -740,10 +769,10 @@ namespace Dominio
             vista += $"\n <                 Elegiste              >";
             vista += $"\n         3 - Alta de un Sospechoso      \n";
             vista += $"\n <    Ingresa S si tiene Antecedentes    > \n";
-            vista += $"\n <   Ingresa N si no tiene Antecedentes  > \n";
-            vista += $"\n ";
+            vista += $" <   Ingresa N si no tiene Antecedentes  > \n";
             vista += $"\n <   Presiona ESC para volver al Inicio  > \n";
 
+            Console.Clear();
             Console.WriteLine(vista);
         }
 
@@ -760,7 +789,8 @@ namespace Dominio
             vista += $"\n";
             vista += $"\n <   Presiona ENTER para ingresar si tiene o no Antecedentes  > \n";
             vista += $"\n <              Presiona ESC para volver al Inicio            > \n";
-
+            
+            Console.Clear();
             Console.WriteLine(vista);
         }
 
@@ -772,11 +802,12 @@ namespace Dominio
             string vista = "";
 
             vista += $"\n <                Elegiste                >";
-            vista += $"\n 3 - Alta de un Sospechoso \n";
-            vista += $"\n < ¡Sospechoso ingresado! > \n";
-            vista += $"\n \n";
-            vista += $"\n < Presiona ENTER para volver al Inicio > \n";
+            vista += $"\n         3 - Alta de un Sospechoso \n";
+            vista += $"\n <         ¡Sospechoso ingresado!         > \n";
+            vista += $"\n ";
+            vista += $"\n <  Presiona ENTER para volver al Inicio  > \n";
 
+            Console.Clear();
             Console.WriteLine(vista);
         }
 
