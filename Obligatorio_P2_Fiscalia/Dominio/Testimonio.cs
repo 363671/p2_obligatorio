@@ -14,10 +14,6 @@ namespace Dominio
         public Credibilidad IndiceCredibilidad { get; set; }
 
         // CTOR
-        public Testimonio()
-        {
-            
-        }
         
         public Testimonio(string nombreTestigo, Credibilidad indiceCredibilidad, DateTime fechaRecoleccion, string descripcion) : base(fechaRecoleccion, descripcion)
         {
@@ -32,7 +28,7 @@ namespace Dominio
         //                                              //
         // // // // // // // // // // // // // // // // //
 
-        public override void ValidarDatos()
+        public virtual void ValidarDatos()
         {
             ValidarNombreTestigo();
         }
@@ -45,14 +41,13 @@ namespace Dominio
             if (NombreTestigo.IsWhiteSpace())
             {
                 errores += "El largo del Nombre del Testigo no puede ser nulo.";
-
-            }
-
-            if (NombreTestigo.Length > 90)
+                
+                
+            } else if (NombreTestigo.Length > 90)
             {
                 errores += "El largo del Nombre del Testigo no puede superar los 90 caracteres.";
-
             }
+            
 
             if (errores != "")
             {

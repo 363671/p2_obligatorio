@@ -50,16 +50,26 @@ namespace Dominio
         private void PrecargarInvestigadores()
         {
             Investigador i1 = new Investigador("sherlock@gmail.com", "Pass1234.", "Sherlock Holmes", Rol.Detective);
-            Investigador i2 = new Investigador("poirot@gmail.com", "Pass1234.", "Hercule Poirot", Rol.Detective);
-            Investigador i3 = new Investigador("columbo@gmail.com", "Pass1234.", "Columbo", Rol.Detective);
-            Investigador i4 = new Investigador("morgan@gmail.com", "Pass1234.", "Morgan Freeman", Rol.Detective);
-            Investigador i5 = new Investigador("watson@gmail.com", "Pass1234.", "John Watson", Rol.Detective);
+            Investigador i2 = new Investigador("watson@gmail.com", "Pass1234.", "John Watson", Rol.Detective);
+            Investigador i3 = new Investigador("poirot@gmail.com", "Pass1234.", "Hercule Poirot", Rol.Detective);
+            Investigador i4 = new Investigador("marlowe@gmail.com", "Pass1234.", "Philip Marlowe", Rol.Detective);
+            Investigador i5 = new Investigador("spade@gmail.com", "Pass1234.", "Sam Spade", Rol.Detective);
+            Investigador i6 = new Investigador("columbo@gmail.com", "Pass1234.", "Frank Columbo", Rol.Detective);
+            Investigador i7 = new Investigador("holmes2@gmail.com", "Pass1234.", "Enola Holmes", Rol.Detective);
+            Investigador i8 = new Investigador("marple@gmail.com", "Pass1234.", "Jane Marple", Rol.Detective);
+            Investigador i9 = new Investigador("morse@gmail.com", "Pass1234.", "Inspector Morse", Rol.Detective);
+            Investigador i10 = new Investigador("veras@gmail.com", "Pass1234.", "Elena Vera", Rol.Detective);
 
-            Investigador i6 = new Investigador("fiscal1@gmail.com", "Pass1234.", "Carlos Rodriguez", Rol.Fiscal);
-            Investigador i7 = new Investigador("fiscal2@gmail.com", "Pass1234.", "Ana Martinez", Rol.Fiscal);
-            Investigador i8 = new Investigador("fiscal3@gmail.com", "Pass1234.", "Juan Gonzalez", Rol.Fiscal);
-            Investigador i9 = new Investigador("fiscal4@gmail.com", "Pass1234.", "Laura Fernandez", Rol.Fiscal);
-            Investigador i10 = new Investigador("fiscal5@gmail.com", "Pass1234.", "Diego Silva", Rol.Fiscal);
+            Investigador i11 = new Investigador("fiscal1@gmail.com", "Pass1234.", "Carlos Rodríguez", Rol.Fiscal);
+            Investigador i12 = new Investigador("fiscal2@gmail.com", "Pass1234.", "María González", Rol.Fiscal);
+            Investigador i13 = new Investigador("fiscal3@gmail.com", "Pass1234.", "Javier Fernández", Rol.Fiscal);
+            Investigador i14 = new Investigador("fiscal4@gmail.com", "Pass1234.", "Lucía Martínez", Rol.Fiscal);
+            Investigador i15 = new Investigador("fiscal5@gmail.com", "Pass1234.", "Andrés Pereira", Rol.Fiscal);
+            Investigador i16 = new Investigador("fiscal6@gmail.com", "Pass1234.", "Sofía Silva", Rol.Fiscal);
+            Investigador i17 = new Investigador("fiscal7@gmail.com", "Pass1234.", "Diego Ramírez", Rol.Fiscal);
+            Investigador i18 = new Investigador("fiscal8@gmail.com", "Pass1234.", "Valentina Torres", Rol.Fiscal);
+            Investigador i19 = new Investigador("fiscal9@gmail.com", "Pass1234.", "Martín Cabrera", Rol.Fiscal);
+            Investigador i20 = new Investigador("fiscal10@gmail.com", "Pass1234.", "Camila Suárez", Rol.Fiscal);
 
             AgregarInvestigador(i1);
             AgregarInvestigador(i2);
@@ -71,27 +81,35 @@ namespace Dominio
             AgregarInvestigador(i8);
             AgregarInvestigador(i9);
             AgregarInvestigador(i10);
+            AgregarInvestigador(i11);
+            AgregarInvestigador(i12);
+            AgregarInvestigador(i13);
+            AgregarInvestigador(i14);
+            AgregarInvestigador(i15);
+            AgregarInvestigador(i16);
+            AgregarInvestigador(i17);
+            AgregarInvestigador(i18);
+            AgregarInvestigador(i19);
+            AgregarInvestigador(i20);
         }
 
         private void PrecargarSospechosos()
         {
-            Sospechoso s1 = new Sospechoso("Juan Pérez", "11111111-1", new DateTime(1985, 3, 15, 0, 0, 0), true);
-            Sospechoso s2 = new Sospechoso("María Gómez", "22222222-2", new DateTime(1990, 7, 22, 0, 0, 0), false);
-            Sospechoso s3 = new Sospechoso("Carlos Rodríguez", "33333333-3", new DateTime(1978, 11, 10, 0, 0, 0), true);
-            Sospechoso s4 = new Sospechoso("Ana Fernández", "44444444-4", new DateTime(1995, 2, 5, 0, 0, 0), false);
-            Sospechoso s5 = new Sospechoso("Luis Martínez", "55555555-5", new DateTime(1988, 9, 18, 0, 0, 0), true);
-
-            Sospechoso s6 = new Sospechoso("Sofía López", "66666666-6", new DateTime(1992, 4, 30, 0, 0, 0), false);
-            Sospechoso s7 = new Sospechoso("Pedro Silva", "77777777-7", new DateTime(1983, 12, 12, 0, 0, 0), true);
-            Sospechoso s8 = new Sospechoso("Valentina Torres", "88888888-8", new DateTime(1998, 6, 8, 0, 0, 0), false);
-            Sospechoso s9 = new Sospechoso("Diego Castro", "99999999-9", new DateTime(1987, 1, 25, 0, 0, 0), true);
-            Sospechoso s10 = new Sospechoso("Lucía Ramírez", "10101010-1", new DateTime(1994, 8, 14, 0, 0, 0), false);
-
-            Sospechoso s11 = new Sospechoso("Javier Morales", "12121212-1", new DateTime(1980, 5, 3, 0, 0, 0), true);
-            Sospechoso s12 = new Sospechoso("Camila Herrera", "13131313-1", new DateTime(1997, 10, 20, 0, 0, 0), false);
-            Sospechoso s13 = new Sospechoso("Fernando Díaz", "14141414-1", new DateTime(1982, 7, 7, 0, 0, 0), true);
-            Sospechoso s14 = new Sospechoso("Paula Núñez", "15151515-1", new DateTime(1991, 11, 28, 0, 0, 0), false);
-            Sospechoso s15 = new Sospechoso("Ricardo Vega", "16161616-1", new DateTime(1986, 2, 16, 0, 0, 0), true);
+            Sospechoso s1 = new Sospechoso("Juan Pérez", "11111111-1", new DateTime(1985, 3, 15), true);
+            Sospechoso s2 = new Sospechoso("María González", "22222222-2", new DateTime(1992, 7, 22), false);
+            Sospechoso s3 = new Sospechoso("Carlos Rodríguez", "33333333-3", new DateTime(1978, 11, 8), true);
+            Sospechoso s4 = new Sospechoso("Laura Fernández", "44444444-4", new DateTime(1990, 1, 30), false);
+            Sospechoso s5 = new Sospechoso("Martín Silva", "55555555-5", new DateTime(1982, 5, 17), true);
+            Sospechoso s6 = new Sospechoso("Sofía Martínez", "66666666-6", new DateTime(1995, 9, 3), false);
+            Sospechoso s7 = new Sospechoso("Diego Cabrera", "77777777-7", new DateTime(1975, 12, 19), true);
+            Sospechoso s8 = new Sospechoso("Valentina López", "88888888-8", new DateTime(1988, 4, 26), false);
+            Sospechoso s9 = new Sospechoso("Andrés Pereira", "99999999-9", new DateTime(1980, 8, 11), true);
+            Sospechoso s10 = new Sospechoso("Camila Suárez", "10101010-0", new DateTime(1997, 2, 14), false);
+            Sospechoso s11 = new Sospechoso("Federico Acosta", "12121212-1", new DateTime(1986, 6, 29), true);
+            Sospechoso s12 = new Sospechoso("Natalia Méndez", "13131313-2", new DateTime(1993, 10, 7), false);
+            Sospechoso s13 = new Sospechoso("Sebastián Torres", "14141414-3", new DateTime(1972, 3, 21), true);
+            Sospechoso s14 = new Sospechoso("Paula Ramírez", "15151515-4", new DateTime(1989, 12, 5), false);
+            Sospechoso s15 = new Sospechoso("Gonzalo Castro", "16161616-5", new DateTime(1991, 7, 18), true);
 
             Sospechoso s16 = new Sospechoso("Martín Cabrera", "17171717-1", new DateTime(1989, 3, 12, 0, 0, 0), false);
             Sospechoso s17 = new Sospechoso("Gabriela Ortiz", "18181818-1", new DateTime(1993, 6, 25, 0, 0, 0), true);
@@ -147,24 +165,21 @@ namespace Dominio
         // > Precarga de Grabaciones
         private void PrecargarGrabaciones()
         {
-            Grabacion g1 = new Grabacion(1, true, new DateTime(2024, 1, 15), "Grabacion de una cámara de seguridad frente al lugar del crimen");
-            Grabacion g2 = new Grabacion(2, false, new DateTime(2024, 2, 3), "Grabacion de una cámara de seguridad de un supermercado");
-            Grabacion g3 = new Grabacion(3, true, new DateTime(2024, 3, 20), "Grabacion donde se observa al sospechoso ingresar al edificio");
-            Grabacion g4 = new Grabacion(4, true, new DateTime(2024, 4, 8), "Grabacion de una cámara ubicada en la calle del incidente");
-            Grabacion g5 = new Grabacion(1, false, new DateTime(2024, 5, 12), "Grabacion de una cámara de seguridad de una estación de servicio");
-
-            Grabacion g6 = new Grabacion(2, true, new DateTime(2024, 6, 2), "Grabacion de una cámara ubicada en la entrada de un banco");
-            Grabacion g7 = new Grabacion(3, false, new DateTime(2024, 6, 18), "Grabacion de una cámara de seguridad de un estacionamiento");
-            Grabacion g8 = new Grabacion(4, true, new DateTime(2024, 7, 5), "Grabacion donde se observa una persona abandonar rápidamente la escena");
-            Grabacion g9 = new Grabacion(5, true, new DateTime(2024, 7, 21), "Grabacion de una cámara ubicada en un comercio cercano");
-            Grabacion g10 = new Grabacion(1, false, new DateTime(2024, 8, 9), "Grabacion de una cámara de seguridad ubicada en una avenida");
-
-            Grabacion g11 = new Grabacion(2, true, new DateTime(2024, 9, 3), "Grabacion de una cámara ubicada frente a una farmacia");
-            Grabacion g12 = new Grabacion(3, false, new DateTime(2024, 9, 17), "Grabacion de una cámara ubicada en un supermercado");
-            Grabacion g13 = new Grabacion(4, true, new DateTime(2024, 10, 6), "Grabacion donde se observa a una persona acercarse al vehículo de la víctima");
-            Grabacion g14 = new Grabacion(5, true, new DateTime(2024, 10, 22), "Grabacion de una cámara ubicada en una plaza cercana");
-            Grabacion g15 = new Grabacion(1, false, new DateTime(2024, 11, 8), "Grabacion de una cámara ubicada en la entrada de un edificio");
-
+            Grabacion g1 = new Grabacion(1, true, new DateTime(2019, 3, 14), "Grabación de una persona ingresando al lugar del hecho.");
+            Grabacion g2 = new Grabacion(4, false, new DateTime(2020, 8, 27), "Grabación de una cámara de seguridad del estacionamiento.");
+            Grabacion g3 = new Grabacion(2, true, new DateTime(2021, 1, 9), "Grabación donde se observa al sospechoso manipulando una puerta.");
+            Grabacion g4 = new Grabacion(5, false, new DateTime(2021, 11, 18), "Grabación de una cámara ubicada frente al domicilio.");
+            Grabacion g5 = new Grabacion(3, true, new DateTime(2022, 5, 6), "Grabación del momento en que se produce el incidente.");
+            Grabacion g6 = new Grabacion(1, false, new DateTime(2022, 12, 21), "Grabación de movimientos registrados en el acceso principal.");
+            Grabacion g7 = new Grabacion(5, true, new DateTime(2023, 2, 13), "Grabación de alta calidad donde se identifica al sospechoso.");
+            Grabacion g8 = new Grabacion(3, false, new DateTime(2023, 9, 30), "Grabación de una cámara de seguridad del comercio.");
+            Grabacion g9 = new Grabacion(2, true, new DateTime(2024, 4, 17), "Grabación donde se observa una discusión entre varias personas.");
+            Grabacion g10 = new Grabacion(4, false, new DateTime(2024, 10, 3), "Grabación correspondiente a una cámara del pasillo.");
+            Grabacion g11 = new Grabacion(1, true, new DateTime(2025, 1, 25), "Grabación de una persona retirándose rápidamente del lugar.");
+            Grabacion g12 = new Grabacion(5, false, new DateTime(2025, 6, 11), "Grabación de alta resolución obtenida de una cámara exterior.");
+            Grabacion g13 = new Grabacion(3, true, new DateTime(2025, 11, 19), "Grabación donde se observa el ingreso no autorizado al edificio.");
+            Grabacion g14 = new Grabacion(4, false, new DateTime(2026, 2, 7), "Grabación de una cámara ubicada en la entrada del edificio.");
+            Grabacion g15 = new Grabacion(2, true, new DateTime(2026, 8, 16), "Grabación donde se observa al sospechoso abandonar la escena.");
 
             AgregarEvidencia(g1);
             AgregarEvidencia(g2);
@@ -185,23 +200,21 @@ namespace Dominio
 
         private void PrecargarFisicas()
         {
-            Fisica f1 = new Fisica(true, new DateTime(2024, 1, 16), "Cuchillo con manchas de sangre encontrado en el lugar");
-            Fisica f2 = new Fisica(true, new DateTime(2024, 2, 4), "Huella dactilar encontrada sobre una ventana");
-            Fisica f3 = new Fisica(false, new DateTime(2024, 3, 21), "Prenda de ropa encontrada cerca de la escena del crimen");
-            Fisica f4 = new Fisica(true, new DateTime(2024, 4, 9), "Casquillo de bala encontrado en el suelo");
-            Fisica f5 = new Fisica(false, new DateTime(2024, 5, 13), "Teléfono celular encontrado en las inmediaciones del lugar");
-
-            Fisica f6 = new Fisica(true, new DateTime(2024, 6, 3), "Guante encontrado detrás del edificio");
-            Fisica f7 = new Fisica(false, new DateTime(2024, 6, 19), "Mochila encontrada cerca de la escena del crimen");
-            Fisica f8 = new Fisica(true, new DateTime(2024, 7, 6), "Herramienta encontrada junto a una puerta forzada");
-            Fisica f9 = new Fisica(false, new DateTime(2024, 7, 22), "Documento de identidad encontrado en el lugar");
-            Fisica f10 = new Fisica(true, new DateTime(2024, 8, 10), "Llave encontrada en las inmediaciones de la escena");
-
-            Fisica f11 = new Fisica(true, new DateTime(2024, 9, 4), "Huella de calzado encontrada cerca de una ventana");
-            Fisica f12 = new Fisica(false, new DateTime(2024, 9, 18), "Gorra encontrada en las inmediaciones del lugar");
-            Fisica f13 = new Fisica(true, new DateTime(2024, 10, 7), "Destornillador encontrado junto a una puerta dañada");
-            Fisica f14 = new Fisica(false, new DateTime(2024, 10, 23), "Billetera encontrada cerca de la escena del crimen");
-            Fisica f15 = new Fisica(true, new DateTime(2024, 11, 9), "Muestra de cabello encontrada en una prenda");
+            Fisica f1 = new Fisica(true, new DateTime(2021, 3, 14), "Cuchillo con manchas de sangre encontrado en el lugar");
+            Fisica f2 = new Fisica(false, new DateTime(2022, 7, 22), "Guante de cuero negro hallado cerca de una ventana");
+            Fisica f3 = new Fisica(true, new DateTime(2023, 1, 9), "Vaso de vidrio con huellas dactilares parciales");
+            Fisica f4 = new Fisica(false, new DateTime(2020, 11, 3), "Prenda de vestir encontrada abandonada en un vehículo");
+            Fisica f5 = new Fisica(true, new DateTime(2024, 2, 18), "Teléfono celular encontrado debajo de una mesa");
+            Fisica f6 = new Fisica(false, new DateTime(2019, 6, 27), "Llave metálica encontrada junto a la puerta trasera");
+            Fisica f7 = new Fisica(true, new DateTime(2022, 10, 5), "Botella de vidrio con huellas visibles en la superficie");
+            Fisica f8 = new Fisica(false, new DateTime(2025, 4, 11), "Mochila negra encontrada en las inmediaciones del lugar");
+            Fisica f9 = new Fisica(true, new DateTime(2021, 12, 30), "Herramienta metálica con posibles huellas dactilares");
+            Fisica f10 = new Fisica(false, new DateTime(2023, 5, 16), "Par de guantes de látex encontrados en un contenedor");
+            Fisica f11 = new Fisica(true, new DateTime(2020, 8, 7), "Taza de cerámica con huellas dactilares parciales");
+            Fisica f12 = new Fisica(false, new DateTime(2024, 9, 24), "Fragmento de vidrio encontrado junto a una ventana rota");
+            Fisica f13 = new Fisica(true, new DateTime(2018, 4, 19), "Llave inglesa con posibles huellas en el mango");
+            Fisica f14 = new Fisica(false, new DateTime(2025, 1, 28), "Campera encontrada en el asiento trasero de un automóvil");
+            Fisica f15 = new Fisica(true, new DateTime(2023, 11, 12), "Lata metálica con huellas dactilares en la superficie");
 
             AgregarEvidencia(f1);
             AgregarEvidencia(f2);
@@ -221,24 +234,22 @@ namespace Dominio
         }
         private void PrecargarTestimonios()
         {
-            Testimonio t1 = new Testimonio("Homero Simpson", Credibilidad.Bajo, new DateTime(2024, 1, 17), "Afirma haber visto al sospechoso ingresar al lugar del crimen");
-            Testimonio t2 = new Testimonio("Marge Simpson", Credibilidad.Medio, new DateTime(2024, 2, 5), "Afirma haber escuchado una discusión cerca del lugar");
-            Testimonio t3 = new Testimonio("Bart Simpson", Credibilidad.Alto, new DateTime(2024, 3, 22), "Afirma haber visto un vehículo abandonar la escena");
-            Testimonio t4 = new Testimonio("Lisa Simpson", Credibilidad.Alto, new DateTime(2024, 4, 10), "Afirma haber observado al sospechoso durante varios minutos");
-            Testimonio t5 = new Testimonio("Ned Flanders", Credibilidad.Medio, new DateTime(2024, 5, 14), "Afirma haber escuchado ruidos provenientes del lugar del crimen");
-
-            Testimonio t6 = new Testimonio("Abraham Simpson", Credibilidad.Bajo, new DateTime(2024, 6, 4), "Afirma haber visto una persona sospechosa cerca del lugar");
-            Testimonio t7 = new Testimonio("Milhouse Van Houten", Credibilidad.Medio, new DateTime(2024, 6, 20), "Afirma haber visto un vehículo estacionado durante varias horas");
-            Testimonio t8 = new Testimonio("Barney Gumble", Credibilidad.Bajo, new DateTime(2024, 7, 7), "Afirma haber escuchado gritos provenientes del edificio");
-            Testimonio t9 = new Testimonio("Edna Krabappel", Credibilidad.Alto, new DateTime(2024, 7, 23), "Afirma haber reconocido al sospechoso en las imágenes");
-            Testimonio t10 = new Testimonio("Waylon Smithers", Credibilidad.Alto, new DateTime(2024, 8, 11), "Afirma haber visto al sospechoso salir del lugar del crimen");
-
-            Testimonio t11 = new Testimonio("Moe Szyslak", Credibilidad.Bajo, new DateTime(2024, 9, 5), "Afirma haber visto a una persona salir apresuradamente del lugar");
-            Testimonio t12 = new Testimonio("Carl Carlson", Credibilidad.Medio, new DateTime(2024, 9, 19), "Afirma haber observado un vehículo sospechoso estacionado cerca");
-            Testimonio t13 = new Testimonio("Lenny Leonard", Credibilidad.Alto, new DateTime(2024, 10, 8), "Afirma haber visto al sospechoso conversando con la víctima");
-            Testimonio t14 = new Testimonio("Ralph Wiggum", Credibilidad.Bajo, new DateTime(2024, 10, 24), "Afirma haber escuchado un ruido fuerte durante la noche");
-            Testimonio t15 = new Testimonio("Chief Wiggum", Credibilidad.Alto, new DateTime(2024, 11, 10), "Afirma haber identificado al sospechoso mediante las cámaras de seguridad");
-
+            Testimonio t1 = new Testimonio("Gandalf", Credibilidad.Bajo, new DateTime(2024, 1, 17), "Afirma haber visto al sospechoso ingresar al lugar del crimen");
+            Testimonio t2 = new Testimonio("María Rodríguez", Credibilidad.Alto, new DateTime(2023, 5, 22), "Declara haber escuchado una discusión proveniente del domicilio durante la noche");
+            Testimonio t3 = new Testimonio("Carlos Méndez", Credibilidad.Medio, new DateTime(2025, 3, 8), "Manifiesta haber visto un vehículo estacionado frente al lugar de los hechos");
+            Testimonio t4 = new Testimonio("Laura Fernández", Credibilidad.Alto, new DateTime(2022, 11, 14), "Afirma haber visto a la víctima reunirse con una persona desconocida horas antes del crimen");
+            Testimonio t5 = new Testimonio("Roberto Silva", Credibilidad.Bajo, new DateTime(2024, 7, 3), "Recuerda haber observado movimientos extraños cerca de la escena del crimen");
+            Testimonio t6 = new Testimonio("Ana Pereira", Credibilidad.Medio, new DateTime(2021, 9, 27), "Declara haber escuchado un fuerte ruido proveniente del edificio durante la madrugada");
+            Testimonio t7 = new Testimonio("Diego Martínez", Credibilidad.Alto, new DateTime(2025, 6, 19), "Afirma haber identificado al sospechoso caminando por la zona poco antes del incidente");
+            Testimonio t8 = new Testimonio("Sofía Cabrera", Credibilidad.Medio, new DateTime(2023, 2, 11), "Manifiesta haber visto a la víctima salir del establecimiento acompañada");
+            Testimonio t9 = new Testimonio("Fernando López", Credibilidad.Bajo, new DateTime(2020, 12, 5), "Declara haber visto una persona correr por una calle cercana a la escena");
+            Testimonio t10 = new Testimonio("Valentina Suárez", Credibilidad.Alto, new DateTime(2024, 10, 29), "Afirma haber recibido información sobre una discusión ocurrida horas antes del crimen");
+            Testimonio t11 = new Testimonio("Martín Castro", Credibilidad.Medio, new DateTime(2022, 4, 16), "Declara haber observado un automóvil abandonar rápidamente el lugar de los hechos");
+            Testimonio t12 = new Testimonio("Lucía Gómez", Credibilidad.Alto, new DateTime(2025, 8, 7), "Afirma haber visto al sospechoso ingresar al edificio durante la tarde");
+            Testimonio t13 = new Testimonio("Javier Torres", Credibilidad.Bajo, new DateTime(2021, 1, 23), "Manifiesta haber escuchado voces provenientes de una habitación cercana");
+            Testimonio t14 = new Testimonio("Camila Núñez", Credibilidad.Medio, new DateTime(2023, 8, 31), "Declara haber visto a una persona desconocida abandonar el lugar poco después del incidente");
+            Testimonio t15 = new Testimonio("Andrés Romero", Credibilidad.Alto, new DateTime(2024, 12, 12), "Afirma haber reconocido la vestimenta del sospechoso al observar las cámaras de seguridad");
+            
             AgregarEvidencia(t1);
             AgregarEvidencia(t2);
             AgregarEvidencia(t3);
@@ -258,66 +269,135 @@ namespace Dominio
 
         private void PrecargarCasos()
         {
-            Caso c1 = new Caso("Caso Confidencial Indominous Raptor", "Investigación por robo en un comercio del centro.", true, _sospechosos[0], _investigadores[0]);
-            Caso c2 = new Caso("Caso Operación Noche Oscura", "Investigación por ingreso no autorizado a una vivienda.", false, _sospechosos[1], _investigadores[1]);
-            Caso c3 = new Caso("Caso Misterio del Puerto", "Investigación por desaparición de mercadería en el puerto.", true, _sospechosos[2], _investigadores[2]);
-            Caso c4 = new Caso("Caso Código Rojo", "Investigación relacionada con el robo de documentación confidencial.", true, _sospechosos[3], _investigadores[3]);
-            Caso c5 = new Caso("Caso Huellas Perdidas", "Investigación por un robo ocurrido durante la madrugada.", false, _sospechosos[4], _investigadores[4]);
-            Caso c6 = new Caso("Caso Sombra en la Ciudad", "Investigación por una serie de robos en distintos comercios.", true, _sospechosos[5], _investigadores[5]);
-            Caso c7 = new Caso("Caso Última Llamada", "Investigación por la desaparición de un teléfono y documentos personales.", false, _sospechosos[6], _investigadores[6]);
-            Caso c8 = new Caso("Caso Puerta Cerrada", "Investigación por ingreso forzado a un depósito.", true, _sospechosos[7], _investigadores[7]);
-            Caso c9 = new Caso("Caso Testigo Anónimo", "Investigación iniciada a partir del testimonio de un testigo desconocido.", false, _sospechosos[8], _investigadores[8]);
-            Caso c10 = new Caso("Caso Archivo Perdido", "Investigación por la desaparición de documentos de una oficina.", true, _sospechosos[9], _investigadores[0]);
+            Caso c1 = new Caso(
+                "Caso Robo en Joyería Central",
+                "Investigación por el robo de varias joyas durante el cierre del comercio.",
+                true,
+                _sospechosos[0],
+                _investigadores[0]
+            );
+
+            Caso c2 = new Caso(
+                "Caso Desaparición del Empresario",
+                "Investigación relacionada con la desaparición de un empresario luego de una reunión de negocios.",
+                true,
+                _sospechosos[1],
+                _investigadores[1]
+            );
+
+            Caso c3 = new Caso(
+                "Caso Incendio del Depósito",
+                "Investigación por un incendio ocurrido durante la madrugada en un depósito industrial.",
+                true,
+                _sospechosos[2],
+                _investigadores[2]
+            );
+
+            Caso c4 = new Caso(
+                "Caso Robo en Residencia",
+                "Investigación por la sustracción de dinero y objetos de valor de una vivienda particular.",
+                false,
+                _sospechosos[3],
+                _investigadores[3]
+            );
+
+            Caso c5 = new Caso(
+                "Caso Accidente en Avenida Central",
+                "Investigación para determinar las circunstancias de un accidente de tránsito con fuga del conductor.",
+                true,
+                _sospechosos[4],
+                _investigadores[4]
+            );
+
+            Caso c6 = new Caso(
+                "Caso Fraude Bancario",
+                "Investigación por movimientos bancarios sospechosos y una posible transferencia no autorizada.",
+                true,
+                _sospechosos[5],
+                _investigadores[5]
+            );
+
+            Caso c7 = new Caso(
+                "Caso Amenazas Anónimas",
+                "Investigación originada por una serie de mensajes amenazantes recibidos por una persona pública.",
+                false,
+                _sospechosos[6],
+                _investigadores[6]
+            );
+
+            Caso c8 = new Caso(
+                "Caso Robo de Vehículo",
+                "Investigación por la desaparición de un automóvil estacionado en las inmediaciones de un centro comercial.",
+                true,
+                _sospechosos[7],
+                _investigadores[7]
+            );
+
+            Caso c9 = new Caso(
+                "Caso Intrusión en Oficina",
+                "Investigación por el ingreso no autorizado a una oficina y la extracción de documentación confidencial.",
+                true,
+                _sospechosos[8],
+                _investigadores[8]
+            );
+
+            Caso c10 = new Caso(
+                "Caso Contrabando en Puerto",
+                "Investigación relacionada con el ingreso irregular de mercadería a través de una zona portuaria.",
+                false,
+                _sospechosos[9],
+                _investigadores[9]
+            );
 
             c1.AgregarEvidencia(_evidencias[0]);
-            c1.AgregarEvidencia(_evidencias[1]);
-            c1.AgregarEvidencia(_evidencias[2]);
-            c1.AgregarEvidencia(_evidencias[30]);
+            c1.AgregarEvidencia(_evidencias[5]);
+            c1.AgregarEvidencia(_evidencias[10]);
+            c1.AgregarEvidencia(_evidencias[15]);
 
-            c2.AgregarEvidencia(_evidencias[3]);
-            c2.AgregarEvidencia(_evidencias[4]);
-            c2.AgregarEvidencia(_evidencias[5]);
-            c2.AgregarEvidencia(_evidencias[31]);
+            c2.AgregarEvidencia(_evidencias[1]);
+            c2.AgregarEvidencia(_evidencias[6]);
+            c2.AgregarEvidencia(_evidencias[11]);
+            c2.AgregarEvidencia(_evidencias[16]);
 
-            c3.AgregarEvidencia(_evidencias[6]);
+            c3.AgregarEvidencia(_evidencias[2]);
             c3.AgregarEvidencia(_evidencias[7]);
-            c3.AgregarEvidencia(_evidencias[8]);
-            c3.AgregarEvidencia(_evidencias[32]);
+            c3.AgregarEvidencia(_evidencias[12]);
+            c3.AgregarEvidencia(_evidencias[17]);
 
-            c4.AgregarEvidencia(_evidencias[9]);
-            c4.AgregarEvidencia(_evidencias[10]);
-            c4.AgregarEvidencia(_evidencias[11]);
-            c4.AgregarEvidencia(_evidencias[33]);
+            c4.AgregarEvidencia(_evidencias[3]);
+            c4.AgregarEvidencia(_evidencias[8]);
+            c4.AgregarEvidencia(_evidencias[13]);
+            c4.AgregarEvidencia(_evidencias[18]);
 
-            c5.AgregarEvidencia(_evidencias[12]);
-            c5.AgregarEvidencia(_evidencias[13]);
+            c5.AgregarEvidencia(_evidencias[4]);
+            c5.AgregarEvidencia(_evidencias[9]);
             c5.AgregarEvidencia(_evidencias[14]);
-            c5.AgregarEvidencia(_evidencias[34]);
+            c5.AgregarEvidencia(_evidencias[19]);
 
-            c6.AgregarEvidencia(_evidencias[15]);
-            c6.AgregarEvidencia(_evidencias[16]);
-            c6.AgregarEvidencia(_evidencias[17]);
-            c6.AgregarEvidencia(_evidencias[35]);
+            c6.AgregarEvidencia(_evidencias[0]);
+            c6.AgregarEvidencia(_evidencias[6]);
+            c6.AgregarEvidencia(_evidencias[12]);
+            c6.AgregarEvidencia(_evidencias[18]);
 
-            c7.AgregarEvidencia(_evidencias[18]);
+            c7.AgregarEvidencia(_evidencias[1]);
+            c7.AgregarEvidencia(_evidencias[7]);
+            c7.AgregarEvidencia(_evidencias[13]);
             c7.AgregarEvidencia(_evidencias[19]);
-            c7.AgregarEvidencia(_evidencias[20]);
-            c7.AgregarEvidencia(_evidencias[36]);
 
-            c8.AgregarEvidencia(_evidencias[21]);
-            c8.AgregarEvidencia(_evidencias[22]);
-            c8.AgregarEvidencia(_evidencias[23]);
-            c8.AgregarEvidencia(_evidencias[37]);
+            c8.AgregarEvidencia(_evidencias[2]);
+            c8.AgregarEvidencia(_evidencias[8]);
+            c8.AgregarEvidencia(_evidencias[14]);
+            c8.AgregarEvidencia(_evidencias[15]);
 
-            c9.AgregarEvidencia(_evidencias[24]);
-            c9.AgregarEvidencia(_evidencias[25]);
-            c9.AgregarEvidencia(_evidencias[26]);
-            c9.AgregarEvidencia(_evidencias[38]);
+            c9.AgregarEvidencia(_evidencias[3]);
+            c9.AgregarEvidencia(_evidencias[9]);
+            c9.AgregarEvidencia(_evidencias[10]);
+            c9.AgregarEvidencia(_evidencias[16]);
 
-            c10.AgregarEvidencia(_evidencias[27]);
-            c10.AgregarEvidencia(_evidencias[28]);
-            c10.AgregarEvidencia(_evidencias[29]);
-            c10.AgregarEvidencia(_evidencias[39]);
+            c10.AgregarEvidencia(_evidencias[4]);
+            c10.AgregarEvidencia(_evidencias[5]);
+            c10.AgregarEvidencia(_evidencias[11]);
+            c10.AgregarEvidencia(_evidencias[17]);
 
             AgregarCaso(c1);
             AgregarCaso(c2);
@@ -421,6 +501,8 @@ namespace Dominio
             {
                 textoConCasos += c.ToString();
             }
+
+            OpcionRegresoInicio();
 
             return textoConCasos;
         }
@@ -602,7 +684,6 @@ namespace Dominio
             vista += $"\n <  Presiona una tecla para volver  > \n";
 
             Console.WriteLine(vista);
-            Console.ReadKey();
         }
 
         // // // // // // // // // // // // // // // // // // // // // // // // // // // //
@@ -818,7 +899,9 @@ namespace Dominio
             vista += $"\n <   Elegiste una opcion invalida    >";
             vista += $"\n < Presiona esc para elegir otra vez >";
 
+            Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine(vista);
+            Console.ResetColor();
         }
 
 

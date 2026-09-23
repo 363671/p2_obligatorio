@@ -6,6 +6,7 @@ namespace UI
     {
         static void Main(string[] args)
         {
+
             // Inicio de Program
             Sistema s = Sistema.GetInstancia();
 
@@ -28,7 +29,6 @@ namespace UI
                         case 1:
                             s.OpcionInicial1();
                             Console.WriteLine(s.MostrarCasosYEvidencias());
-                            s.OpcionRegresoInicio();
                             break;
 
                         //CASO 2
@@ -64,7 +64,7 @@ namespace UI
 
                             s.Opcion3SolicitaAntecedentes();
                             Console.WriteLine($" Llevas 3/4 datos -> Nombre: {nombre} / CI: {ci} / Fecha Nac.: {fechaNac}\n");
-                            
+
                             string antec = Console.ReadLine();
                             Console.WriteLine($" Llevas 4/4 datos -> Nombre: {nombre} / CI: {ci} / Fecha Nac.: {fechaNac} / Antecedentes: {antec} \n");
 
@@ -91,17 +91,21 @@ namespace UI
 
                     Console.ReadKey();
                 }
-                
+
                 catch (FormatException)
                 {
-                    Console.WriteLine(" \n ----------------- ERROR -----------------");
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine(" \n ------------------- ERROR ------------------- ");
                     Console.WriteLine(" El formato que introduciste no es válido. \n Asegúrate de ingresarlo acorde a lo indicado.");
+                    Console.WriteLine(" \n ----------- ENTER para reintentar ----------- ");
+                    Console.ResetColor();
                 }
                 catch (Exception e)
                 {
-                    Console.WriteLine();
-                    Console.WriteLine(e.Message);
-                    Console.WriteLine();
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine($"Error: {e.Message}");
+                    Console.ResetColor();
+                    Console.WriteLine("Por favor, intente de nuevo.\n");
                 }
 
                 Console.ReadKey();
@@ -109,5 +113,10 @@ namespace UI
 
             // Final de Program
         }
+
+        //static void Mensajes(string[] args)
+        //{
+
+        //}
     }
 }
