@@ -33,7 +33,8 @@ namespace Dominio
             ValidarDatos();
         }
 
-        public Caso(string nombre, string descripcion, bool activo, Sospechoso sospechoso, Investigador investigadorD)
+        // Constructor para Evidencias Fisicas
+        public Caso(string nombre, string descripcion, bool activo, Sospechoso sospechoso, Investigador investigadorD, DateTime fechaRecoleccion, string descEvidencia, bool tieneHuellasDigitales)
         {
             Id = ++UltimoId;
             Nombre = nombre;
@@ -41,6 +42,33 @@ namespace Dominio
             Activo = activo;
             SospechosoPrincipal = sospechoso;
             InvestigadorD = investigadorD;
+            _evidenciasDelCaso.Add(new Fisica(tieneHuellasDigitales, fechaRecoleccion, descEvidencia));
+            ValidarDatos();
+        }
+
+        // Constructor para Evidencias Grabaciones
+        public Caso(string nombre, string descripcion, bool activo, Sospechoso sospechoso, Investigador investigadorD, DateTime fechaRecoleccion, string descEvidencia, int calidad, bool inFraganti)
+        {
+            Id = ++UltimoId;
+            Nombre = nombre;
+            Descripcion = descripcion;
+            Activo = activo;
+            SospechosoPrincipal = sospechoso;
+            InvestigadorD = investigadorD;
+            _evidenciasDelCaso.Add(new Grabacion(calidad, inFraganti, fechaRecoleccion, descEvidencia));
+            ValidarDatos();
+        }
+
+        // Constructor para Evidencias Testimonios
+        public Caso(string nombre, string descripcion, bool activo, Sospechoso sospechoso, Investigador investigadorD, DateTime fechaRecoleccion, string descEvidencia, string nombreTestigo, Credibilidad credibilidad)
+        {
+            Id = ++UltimoId;
+            Nombre = nombre;
+            Descripcion = descripcion;
+            Activo = activo;
+            SospechosoPrincipal = sospechoso;
+            InvestigadorD = investigadorD;
+            _evidenciasDelCaso.Add(new Testimonio(nombreTestigo, credibilidad, fechaRecoleccion, descEvidencia));
             ValidarDatos();
         }
 
