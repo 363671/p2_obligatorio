@@ -4,7 +4,13 @@ using System.Text;
 
 namespace Dominio
 {
-    internal interface IValidable
+    public interface IValidable
     {
+        public void ValidarDatos()
+        {
+            Console.WriteLine("qw");
+        }
+
+
     }
 }

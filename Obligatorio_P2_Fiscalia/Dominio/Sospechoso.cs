@@ -33,7 +33,7 @@ namespace Dominio
         }
 
         // METODOS
-        private void ValidarDatos()
+        public void ValidarDatos()
         {
             ValidarCedula();
             ValidarNombre();
@@ -42,31 +42,16 @@ namespace Dominio
 
         private void ValidarCedula()
         {
-            string errores = "";
-
             if (Cedula.IsWhiteSpace())
             {
-                errores += "El largo de la CI no puede ser nulo.";
-
+                throw new Exception(" < El largo de la CI no puede ser nulo. > ");
             }
 
             if (Cedula.Length < 9)
             {
-                errores += "El largo de la CI no puede ser menor a 9 caracteres.";
-
+                throw new Exception(" < El largo de la CI no puede ser menor a 9 caracteres. > ");
             }
 
-            if (Cedula[Cedula.Length - 2] != '-')
-            {
-                errores += "El penultimo caracter de la CI debe ser un guion (-).";
-
-            }
-
-            if (errores != "")
-            {
-                Console.WriteLine("");
-                throw new Exception(" < Ha ocurrido un error / CI / > ");
-            }
         }
 
         private void ValidarNombre()

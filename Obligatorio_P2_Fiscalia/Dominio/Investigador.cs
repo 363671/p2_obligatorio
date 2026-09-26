@@ -5,7 +5,7 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Dominio
 {
-    public class Investigador
+    public class Investigador : IValidable
     {
         // ATRIBUTOS y PROPERTIES
         public static int UltimoId { get; set; } = 0;
@@ -33,7 +33,7 @@ namespace Dominio
         }
 
         // METODOS
-        private void ValidarDatos()
+        public void ValidarDatos()
         {
             ValidarMail();
             ValidarContrasena();

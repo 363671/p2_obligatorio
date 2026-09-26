@@ -26,13 +26,13 @@ namespace UI
 
                     switch (eleccion)
                     {
-                        //CASO 1
+                        // // // // CASO 1 // // // // 
                         case 1:
                             DataToUser.OpcionInicial1();
                             Console.WriteLine(s.MostrarCasosYEvidencias());
                             break;
 
-                        //CASO 2
+                        // // // // CASO 2 // // // // 
                         case 2:
                             DataToUser.OpcionInicial2SolicitaCorreo();
                             string mail = Console.ReadLine();
@@ -49,7 +49,7 @@ namespace UI
                             DataToUser.OpcionRegresoInicio();
                             break;
 
-                        //CASO 3
+                        // // // // CASO 3 // // // // 
                         case 3:
                             DataToUser.OpcionInicial3SolicitaNombre();
                             string nombre = Console.ReadLine();
@@ -66,24 +66,26 @@ namespace UI
                             DataToUser.Opcion3SolicitaAntecedentes();
                             Console.WriteLine($" Llevas 3/4 datos -> Nombre: {nombre} / CI: {ci} / Fecha Nac.: {fechaNac}\n");
 
-                            string antec = Console.ReadLine();
-                            Console.WriteLine($" Llevas 4/4 datos -> Nombre: {nombre} / CI: {ci} / Fecha Nac.: {fechaNac} / Antecedentes: {antec} \n");
+                            string antecedentes = Console.ReadLine();
+                            Console.WriteLine($" Llevas 4/4 datos -> Nombre: {nombre} / CI: {ci} / Fecha Nac.: {fechaNac} / Antecedentes: {antecedentes} \n");
 
-                            s.ValidarSospechoso(nombre, ci, fechaNac, antec);
-
+                            s.ValidarSospechoso(nombre, ci, fechaNac, antecedentes);
+                            s.AltaSospechoso(nombre, ci, fechaNac, antecedentes);
                             DataToUser.Op3AltaExitosa();
                             break;
 
-                        //CASO 4
+                        // // // // CASO 4 // // // // 
                         case 4:
                             DataToUser.OpcionInicial4();
                             Console.WriteLine(s.MostrarSospechososConAntecedentes());
                             break;
 
-                        //CASO 5
+                        // // // // CASO 5 // // // //
                         case 5:
                             eligioSalir = true;
                             break;
+
+                        // // // // CASO DEFAULT // // // // 
                         default:
                             DataToUser.OpcionInicial5();
                             break;
@@ -93,6 +95,7 @@ namespace UI
                     Console.ReadKey();
                 }
 
+                // // // // catches de errores // // // // 
                 catch (FormatException)
                 {
                     Console.ForegroundColor = ConsoleColor.Red;

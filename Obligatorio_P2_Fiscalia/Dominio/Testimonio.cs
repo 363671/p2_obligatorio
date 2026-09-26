@@ -5,7 +5,7 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Dominio
 {
-    public class Testimonio : Evidencia
+    public class Testimonio : Evidencia, IValidable
     {
         // CLASE HIJA de EVIDENCIA
 
@@ -28,7 +28,7 @@ namespace Dominio
         //                                              //
         // // // // // // // // // // // // // // // // //
 
-        public virtual void ValidarDatos()
+        public void ValidarDatos()
         {
             ValidarNombreTestigo();
         }

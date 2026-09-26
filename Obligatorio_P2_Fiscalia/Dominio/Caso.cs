@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Dominio
 {
-    public class Caso
+    public class Caso : IValidable
     {
         // ATRIBUTOS y PROPERTIES
         public static int UltimoId { get; set; } = 0;
@@ -84,10 +84,9 @@ namespace Dominio
             _evidenciasDelCaso.Add(e);
         }
 
-        private void ValidarDatos()
+        public void ValidarDatos()
         {
-            //ValidarActivo();
-            //ValidarSospechoso();
+            ValidarActivo();
             ValidarInvestigador();
         }
 

@@ -7,13 +7,12 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Dominio
 {
-    public class Sistema
+    public class Sistema : IValidable
     {
         // ATRIBUTOS y PROPERTIES
         private List<Investigador> _investigadores { get; } = new List<Investigador>();
         private List<Sospechoso> _sospechosos { get; } = new List<Sospechoso>();
         private List<Caso> _casos { get; } = new List<Caso>();
-        private List<Evidencia> _evidencias { get; } = new List<Evidencia>();
         private static Sistema _instancia;
         
         // CTOR
@@ -25,9 +24,6 @@ namespace Dominio
         // PRECARGAS DE DATOS
         private void PrecargarDatos()
         {
-            PrecargarFisicas();
-            PrecargarGrabaciones();
-            PrecargarTestimonios();
             PrecargarInvestigadores();
             PrecargarSospechosos();
             PrecargarCasos();
@@ -161,115 +157,445 @@ namespace Dominio
             AgregarSospechoso(s30);
         }
 
-        // Precarga de Evidencias
-        // > Precarga de Grabaciones
-        private void PrecargarGrabaciones()
-        {
-            Grabacion g1 = new Grabacion(1, true, new DateTime(2019, 3, 14), "Grabación de una persona ingresando al lugar del hecho.");
-            Grabacion g2 = new Grabacion(4, false, new DateTime(2020, 8, 27), "Grabación de una cámara de seguridad del estacionamiento.");
-            Grabacion g3 = new Grabacion(2, true, new DateTime(2021, 1, 9), "Grabación donde se observa al sospechoso manipulando una puerta.");
-            Grabacion g4 = new Grabacion(5, false, new DateTime(2021, 11, 18), "Grabación de una cámara ubicada frente al domicilio.");
-            Grabacion g5 = new Grabacion(3, true, new DateTime(2022, 5, 6), "Grabación del momento en que se produce el incidente.");
-            Grabacion g6 = new Grabacion(1, false, new DateTime(2022, 12, 21), "Grabación de movimientos registrados en el acceso principal.");
-            Grabacion g7 = new Grabacion(5, true, new DateTime(2023, 2, 13), "Grabación de alta calidad donde se identifica al sospechoso.");
-            Grabacion g8 = new Grabacion(3, false, new DateTime(2023, 9, 30), "Grabación de una cámara de seguridad del comercio.");
-            Grabacion g9 = new Grabacion(2, true, new DateTime(2024, 4, 17), "Grabación donde se observa una discusión entre varias personas.");
-            Grabacion g10 = new Grabacion(4, false, new DateTime(2024, 10, 3), "Grabación correspondiente a una cámara del pasillo.");
-            Grabacion g11 = new Grabacion(1, true, new DateTime(2025, 1, 25), "Grabación de una persona retirándose rápidamente del lugar.");
-            Grabacion g12 = new Grabacion(5, false, new DateTime(2025, 6, 11), "Grabación de alta resolución obtenida de una cámara exterior.");
-            Grabacion g13 = new Grabacion(3, true, new DateTime(2025, 11, 19), "Grabación donde se observa el ingreso no autorizado al edificio.");
-            Grabacion g14 = new Grabacion(4, false, new DateTime(2026, 2, 7), "Grabación de una cámara ubicada en la entrada del edificio.");
-            Grabacion g15 = new Grabacion(2, true, new DateTime(2026, 8, 16), "Grabación donde se observa al sospechoso abandonar la escena.");
-
-            AgregarEvidencia(g1);
-            AgregarEvidencia(g2);
-            AgregarEvidencia(g3);
-            AgregarEvidencia(g4);
-            AgregarEvidencia(g5);
-            AgregarEvidencia(g6);
-            AgregarEvidencia(g7);
-            AgregarEvidencia(g8);
-            AgregarEvidencia(g9);
-            AgregarEvidencia(g10);
-            AgregarEvidencia(g11);
-            AgregarEvidencia(g12);
-            AgregarEvidencia(g13);
-            AgregarEvidencia(g14);
-            AgregarEvidencia(g15);
-        }
-
-        private void PrecargarFisicas()
-        {
-            Fisica f1 = new Fisica(true, new DateTime(2021, 3, 14), "Cuchillo con manchas de sangre encontrado en el lugar");
-            Fisica f2 = new Fisica(false, new DateTime(2022, 7, 22), "Guante de cuero negro hallado cerca de una ventana");
-            Fisica f3 = new Fisica(true, new DateTime(2023, 1, 9), "Vaso de vidrio con huellas dactilares parciales");
-            Fisica f4 = new Fisica(false, new DateTime(2020, 11, 3), "Prenda de vestir encontrada abandonada en un vehículo");
-            Fisica f5 = new Fisica(true, new DateTime(2024, 2, 18), "Teléfono celular encontrado debajo de una mesa");
-            Fisica f6 = new Fisica(false, new DateTime(2019, 6, 27), "Llave metálica encontrada junto a la puerta trasera");
-            Fisica f7 = new Fisica(true, new DateTime(2022, 10, 5), "Botella de vidrio con huellas visibles en la superficie");
-            Fisica f8 = new Fisica(false, new DateTime(2025, 4, 11), "Mochila negra encontrada en las inmediaciones del lugar");
-            Fisica f9 = new Fisica(true, new DateTime(2021, 12, 30), "Herramienta metálica con posibles huellas dactilares");
-            Fisica f10 = new Fisica(false, new DateTime(2023, 5, 16), "Par de guantes de látex encontrados en un contenedor");
-            Fisica f11 = new Fisica(true, new DateTime(2020, 8, 7), "Taza de cerámica con huellas dactilares parciales");
-            Fisica f12 = new Fisica(false, new DateTime(2024, 9, 24), "Fragmento de vidrio encontrado junto a una ventana rota");
-            Fisica f13 = new Fisica(true, new DateTime(2018, 4, 19), "Llave inglesa con posibles huellas en el mango");
-            Fisica f14 = new Fisica(false, new DateTime(2025, 1, 28), "Campera encontrada en el asiento trasero de un automóvil");
-            Fisica f15 = new Fisica(true, new DateTime(2023, 11, 12), "Lata metálica con huellas dactilares en la superficie");
-
-            AgregarEvidencia(f1);
-            AgregarEvidencia(f2);
-            AgregarEvidencia(f3);
-            AgregarEvidencia(f4);
-            AgregarEvidencia(f5);
-            AgregarEvidencia(f6);
-            AgregarEvidencia(f7);
-            AgregarEvidencia(f8);
-            AgregarEvidencia(f9);
-            AgregarEvidencia(f10);
-            AgregarEvidencia(f11);
-            AgregarEvidencia(f12);
-            AgregarEvidencia(f13);
-            AgregarEvidencia(f14);
-            AgregarEvidencia(f15);
-        }
-        private void PrecargarTestimonios()
-        {
-            Testimonio t1 = new Testimonio("Gandalf", Credibilidad.Bajo, new DateTime(2024, 1, 17), "Afirma haber visto al sospechoso ingresar al lugar del crimen");
-            Testimonio t2 = new Testimonio("María Rodríguez", Credibilidad.Alto, new DateTime(2023, 5, 22), "Declara haber escuchado una discusión proveniente del domicilio durante la noche");
-            Testimonio t3 = new Testimonio("Carlos Méndez", Credibilidad.Medio, new DateTime(2025, 3, 8), "Manifiesta haber visto un vehículo estacionado frente al lugar de los hechos");
-            Testimonio t4 = new Testimonio("Laura Fernández", Credibilidad.Alto, new DateTime(2022, 11, 14), "Afirma haber visto a la víctima reunirse con una persona desconocida horas antes del crimen");
-            Testimonio t5 = new Testimonio("Roberto Silva", Credibilidad.Bajo, new DateTime(2024, 7, 3), "Recuerda haber observado movimientos extraños cerca de la escena del crimen");
-            Testimonio t6 = new Testimonio("Ana Pereira", Credibilidad.Medio, new DateTime(2021, 9, 27), "Declara haber escuchado un fuerte ruido proveniente del edificio durante la madrugada");
-            Testimonio t7 = new Testimonio("Diego Martínez", Credibilidad.Alto, new DateTime(2025, 6, 19), "Afirma haber identificado al sospechoso caminando por la zona poco antes del incidente");
-            Testimonio t8 = new Testimonio("Sofía Cabrera", Credibilidad.Medio, new DateTime(2023, 2, 11), "Manifiesta haber visto a la víctima salir del establecimiento acompañada");
-            Testimonio t9 = new Testimonio("Fernando López", Credibilidad.Bajo, new DateTime(2020, 12, 5), "Declara haber visto una persona correr por una calle cercana a la escena");
-            Testimonio t10 = new Testimonio("Valentina Suárez", Credibilidad.Alto, new DateTime(2024, 10, 29), "Afirma haber recibido información sobre una discusión ocurrida horas antes del crimen");
-            Testimonio t11 = new Testimonio("Martín Castro", Credibilidad.Medio, new DateTime(2022, 4, 16), "Declara haber observado un automóvil abandonar rápidamente el lugar de los hechos");
-            Testimonio t12 = new Testimonio("Lucía Gómez", Credibilidad.Alto, new DateTime(2025, 8, 7), "Afirma haber visto al sospechoso ingresar al edificio durante la tarde");
-            Testimonio t13 = new Testimonio("Javier Torres", Credibilidad.Bajo, new DateTime(2021, 1, 23), "Manifiesta haber escuchado voces provenientes de una habitación cercana");
-            Testimonio t14 = new Testimonio("Camila Núñez", Credibilidad.Medio, new DateTime(2023, 8, 31), "Declara haber visto a una persona desconocida abandonar el lugar poco después del incidente");
-            Testimonio t15 = new Testimonio("Andrés Romero", Credibilidad.Alto, new DateTime(2024, 12, 12), "Afirma haber reconocido la vestimenta del sospechoso al observar las cámaras de seguridad");
-            
-            AgregarEvidencia(t1);
-            AgregarEvidencia(t2);
-            AgregarEvidencia(t3);
-            AgregarEvidencia(t4);
-            AgregarEvidencia(t5);
-            AgregarEvidencia(t6);
-            AgregarEvidencia(t7);
-            AgregarEvidencia(t8);
-            AgregarEvidencia(t9);
-            AgregarEvidencia(t10);
-            AgregarEvidencia(t11);
-            AgregarEvidencia(t12);
-            AgregarEvidencia(t13);
-            AgregarEvidencia(t14);
-            AgregarEvidencia(t15);
-        }
+        // // // // // // // // // // // // // // // // //
+        //                                              //
+        //                    CASOS                     //
+        //                                              //
+        // // // // // // // // // // // // // // // // //
 
         private void PrecargarCasos()
         {
-            
+            // ==========================================================
+            // CASO 1 - Se crea inicialmente con un TESTIMONIO
+            // ==========================================================
+
+            Caso c1 = new Caso(
+                "Robo en Joyería Central",
+                "Investigación por robo ocurrido durante la madrugada en una joyería.",
+                true,
+                _sospechosos[0],
+                _investigadores[0],
+                new DateTime(2024, 3, 12),
+                "Testigo afirma haber visto a una persona salir rápidamente del local.",
+                "Carlos Méndez",
+                Credibilidad.Alto
+            );
+
+            c1.AgregarEvidencia(
+                new Fisica(
+                    true,
+                    new DateTime(2024, 3, 12),
+                    "Destornillador encontrado junto a la puerta trasera."
+                )
+            );
+
+            c1.AgregarEvidencia(
+                new Grabacion(
+                    8,
+                    true,
+                    new DateTime(2024, 3, 12),
+                    "Cámara de seguridad registra al sospechoso ingresando al comercio."
+                )
+            );
+
+            c1.AgregarEvidencia(
+                new Testimonio(
+                    "Mariana López",
+                    Credibilidad.Medio,
+                    new DateTime(2024, 3, 13),
+                    "Vecina escuchó ruidos de vidrios rotos durante la madrugada."
+                )
+            );
+
+            // ==========================================================
+            // CASO 2 - Se crea inicialmente con una GRABACIÓN
+            // ==========================================================
+
+            Caso c2 = new Caso(
+                "Asalto a Estación de Servicio",
+                "Investigación por asalto a una estación de servicio durante la noche.",
+                true,
+                _sospechosos[1],
+                _investigadores[1],
+                new DateTime(2023, 7, 21),
+                "Grabación de la cámara ubicada sobre la caja registradora.",
+                9,
+                true
+            );
+
+            c2.AgregarEvidencia(
+                new Fisica(
+                    true,
+                    new DateTime(2023, 7, 21),
+                    "Guante encontrado detrás del mostrador."
+                )
+            );
+
+            c2.AgregarEvidencia(
+                new Testimonio(
+                    "Federico Silva",
+                    Credibilidad.Alto,
+                    new DateTime(2023, 7, 21),
+                    "Empleado describe la vestimenta y características del atacante."
+                )
+            );
+
+            c2.AgregarEvidencia(
+                new Grabacion(
+                    6,
+                    false,
+                    new DateTime(2023, 7, 22),
+                    "Cámara exterior registra un vehículo abandonando el lugar."
+                )
+            );
+
+
+            // ==========================================================
+            // CASO 3 - Se crea inicialmente con evidencia FÍSICA
+            // ==========================================================
+
+            Caso c3 = new Caso(
+                "Hurto en Museo Histórico",
+                "Desaparición de una pieza histórica perteneciente a una exposición.",
+                true,
+                _sospechosos[2],
+                _investigadores[2],
+                new DateTime(2022, 11, 5),
+                "Herramienta metálica encontrada cerca de la vitrina forzada.",
+                true
+            );
+
+            c3.AgregarEvidencia(
+                new Grabacion(
+                    7,
+                    false,
+                    new DateTime(2022, 11, 5),
+                    "Grabación muestra movimientos en un corredor próximo a la exposición."
+                )
+            );
+
+            c3.AgregarEvidencia(
+                new Testimonio(
+                    "Laura Fernández",
+                    Credibilidad.Medio,
+                    new DateTime(2022, 11, 6),
+                    "Guardia recuerda haber visto a una persona permanecer cerca de la vitrina."
+                )
+            );
+
+            c3.AgregarEvidencia(
+                new Fisica(
+                    false,
+                    new DateTime(2022, 11, 5),
+                    "Trozo de tela encontrado enganchado en la vitrina."
+                )
+            );
+
+
+            // ==========================================================
+            // CASO 4 - TESTIMONIO
+            // ==========================================================
+            Caso c4 = new Caso(
+                "Robo de Vehículo",
+                "Investigación por la desaparición de un vehículo estacionado en la vía pública.",
+                true,
+                _sospechosos[3],
+                _investigadores[3],
+                new DateTime(2021, 5, 18),
+                "Testigo vio a una persona manipulando la cerradura del vehículo.",
+                "Martín Rodríguez",
+                Credibilidad.Alto
+            );
+
+            c4.AgregarEvidencia(
+                new Grabacion(
+                    5,
+                    false,
+                    new DateTime(2021, 5, 18),
+                    "Cámara de un comercio registra parcialmente el momento del robo."
+                )
+            );
+
+            c4.AgregarEvidencia(
+                new Fisica(
+                    true,
+                    new DateTime(2021, 5, 18),
+                    "Herramienta utilizada para forzar la cerradura."
+                )
+            );
+
+            c4.AgregarEvidencia(
+                new Testimonio(
+                    "Andrea Suárez",
+                    Credibilidad.Bajo,
+                    new DateTime(2021, 5, 19),
+                    "Afirma haber visto el vehículo circulando por otra zona de la ciudad."
+                )
+            );
+
+
+            // ==========================================================
+            // CASO 5 - GRABACIÓN
+            // ==========================================================
+            Caso c5 = new Caso(
+                "Rapiña en Supermercado",
+                "Investigación por una rapiña ocurrida minutos antes del cierre.",
+                true,
+                _sospechosos[4],
+                _investigadores[4],
+                new DateTime(2025, 1, 8),
+                "Grabación principal del sistema de vigilancia del supermercado.",
+                10,
+                true
+            );
+
+            c5.AgregarEvidencia(
+                new Fisica(
+                    true,
+                    new DateTime(2025, 1, 8),
+                    "Mochila abandonada utilizada durante la rapiña."
+                )
+            );
+
+            c5.AgregarEvidencia(
+                new Testimonio(
+                    "Sofía Pereira",
+                    Credibilidad.Alto,
+                    new DateTime(2025, 1, 8),
+                    "Cajera reconoce características físicas del sospechoso."
+                )
+            );
+
+            c5.AgregarEvidencia(
+                new Grabacion(
+                    8,
+                    false,
+                    new DateTime(2025, 1, 8),
+                    "Grabación del estacionamiento muestra la ruta de escape."
+                )
+            );
+
+
+            // ==========================================================
+            // CASO 6 - FÍSICA
+            // ==========================================================
+            Caso c6 = new Caso(
+                "Ingreso Ilegal a Depósito",
+                "Investigación por acceso no autorizado a un depósito industrial.",
+                true,
+                _sospechosos[5],
+                _investigadores[5],
+                new DateTime(2020, 9, 14),
+                "Barreta metálica encontrada junto a una puerta forzada.",
+                true
+            );
+
+            c6.AgregarEvidencia(
+                new Grabacion(
+                    4,
+                    false,
+                    new DateTime(2020, 9, 14),
+                    "Cámara distante registra una silueta ingresando al depósito."
+                )
+            );
+
+            c6.AgregarEvidencia(
+                new Testimonio(
+                    "Ricardo Núñez",
+                    Credibilidad.Medio,
+                    new DateTime(2020, 9, 15),
+                    "Guardia nocturno escuchó ruidos provenientes del depósito."
+                )
+            );
+
+            c6.AgregarEvidencia(
+                new Fisica(
+                    false,
+                    new DateTime(2020, 9, 14),
+                    "Linterna encontrada dentro de una zona restringida."
+                )
+            );
+
+
+            // ==========================================================
+            // CASO 7 - TESTIMONIO
+            // ==========================================================
+            Caso c7 = new Caso(
+                "Fraude en Comercio Electrónico",
+                "Investigación relacionada con compras realizadas utilizando datos ajenos.",
+                true,
+                _sospechosos[6],
+                _investigadores[6],
+                new DateTime(2024, 8, 2),
+                "Empleado afirma haber entregado varios pedidos a la misma persona.",
+                "Nicolás Cabrera",
+                Credibilidad.Medio
+            );
+
+            c7.AgregarEvidencia(
+                new Grabacion(
+                    9,
+                    false,
+                    new DateTime(2024, 8, 2),
+                    "Cámara del punto de entrega registra al individuo retirando productos."
+                )
+            );
+
+            c7.AgregarEvidencia(
+                new Fisica(
+                    true,
+                    new DateTime(2024, 8, 3),
+                    "Comprobante de compra encontrado durante una inspección."
+                )
+            );
+
+            c7.AgregarEvidencia(
+                new Testimonio(
+                    "Valentina Castro",
+                    Credibilidad.Alto,
+                    new DateTime(2024, 8, 3),
+                    "Reconoce al sospechoso como la persona que retiró varios paquetes."
+                )
+            );
+
+
+            // ==========================================================
+            // CASO 8 - GRABACIÓN
+            // ==========================================================
+            Caso c8 = new Caso(
+                "Vandalismo en Centro Educativo",
+                "Investigación por daños ocasionados durante la madrugada.",
+                true,
+                _sospechosos[7],
+                _investigadores[7],
+                new DateTime(2022, 2, 26),
+                "Cámara del acceso principal registra a varias personas entrando al predio.",
+                7,
+                true
+            );
+
+            c8.AgregarEvidencia(
+                new Fisica(
+                    true,
+                    new DateTime(2022, 2, 26),
+                    "Lata de pintura encontrada junto a una pared vandalizada."
+                )
+            );
+
+            c8.AgregarEvidencia(
+                new Testimonio(
+                    "Daniel Gómez",
+                    Credibilidad.Bajo,
+                    new DateTime(2022, 2, 27),
+                    "Vecino afirma haber escuchado voces durante la madrugada."
+                )
+            );
+
+            c8.AgregarEvidencia(
+                new Grabacion(
+                    6,
+                    false,
+                    new DateTime(2022, 2, 26),
+                    "Otra cámara registra a un grupo alejándose del centro educativo."
+                )
+            );
+
+
+            // ==========================================================
+            // CASO 9 - FÍSICA
+            // ==========================================================
+            Caso c9 = new Caso(
+                "Robo en Farmacia",
+                "Investigación por sustracción de dinero y medicamentos.",
+                true,
+                _sospechosos[8],
+                _investigadores[8],
+                new DateTime(2023, 12, 11),
+                "Guante encontrado sobre el mostrador del establecimiento.",
+                true
+            );
+
+            c9.AgregarEvidencia(
+                new Grabacion(
+                    8,
+                    true,
+                    new DateTime(2023, 12, 11),
+                    "Cámara interna registra claramente al sospechoso."
+                )
+            );
+
+            c9.AgregarEvidencia(
+                new Testimonio(
+                    "Paula Acosta",
+                    Credibilidad.Alto,
+                    new DateTime(2023, 12, 11),
+                    "Empleada estuvo presente durante el robo y describe al responsable."
+                )
+            );
+
+            c9.AgregarEvidencia(
+                new Fisica(
+                    false,
+                    new DateTime(2023, 12, 11),
+                    "Bolsa abandonada cerca de la entrada de la farmacia."
+                )
+            );
+
+
+            // ==========================================================
+            // CASO 10 - GRABACIÓN
+            // ==========================================================
+            Caso c10 = new Caso(
+                "Robo en Local de Informática",
+                "Investigación por robo de computadoras y otros dispositivos electrónicos.",
+                true,
+                _sospechosos[9],
+                _investigadores[9],
+                new DateTime(2025, 6, 17),
+                "Cámara interna registra el momento en que se retiran varios equipos.",
+                9,
+                true
+            );
+
+            c10.AgregarEvidencia(
+                new Fisica(
+                    true,
+                    new DateTime(2025, 6, 17),
+                    "Destornillador encontrado debajo de uno de los escritorios."
+                )
+            );
+
+            c10.AgregarEvidencia(
+                new Testimonio(
+                    "Gabriel Martínez",
+                    Credibilidad.Medio,
+                    new DateTime(2025, 6, 18),
+                    "Comerciante de la zona vio a una persona cargando equipos en un vehículo."
+                )
+            );
+
+            c10.AgregarEvidencia(
+                new Grabacion(
+                    7,
+                    false,
+                    new DateTime(2025, 6, 17),
+                    "Cámara exterior permite identificar parcialmente la matrícula del vehículo."
+                )
+            );
+
+            // ==========================================================
+            // Añadir Casos a la lista _casos
+            // ==========================================================
+            AgregarCaso(c1);
+            AgregarCaso(c2);
+            AgregarCaso(c3);
+            AgregarCaso(c4);
+            AgregarCaso(c5);
+            AgregarCaso(c6);
+            AgregarCaso(c7);
+            AgregarCaso(c8);
+            AgregarCaso(c9);
+            AgregarCaso(c10);
         }
 
         //////////////////// AGREGAR A LAS LISTAS DE DATOS ////////////////////
@@ -285,13 +611,7 @@ namespace Dominio
 
             throw new Exception(" < Ha ocurrido un error / El mail ingresado ya está asociado a un Investigador / > ");
         }
-
-        // > Agregar Evidencia
-        private void AgregarEvidencia(Evidencia e)
-        {
-            _evidencias.Add(e);
-        }
-
+       
         // > Agregar Sospechoso
         private void AgregarSospechoso(Sospechoso s)
         {
@@ -327,13 +647,26 @@ namespace Dominio
         {
             return _investigadores;
         }
+
         public List<Sospechoso> GetSospechosos()
         {
             return _sospechosos;
         }
-        public List<Evidencia> GetEvidencias()
+
+        //////////////////// CREACION DE SOSPECHOSO (para el caso 3) ////////////////////
+        public void AltaSospechoso(string nombre, string ci, DateTime fechaNac, string antecedentes)
         {
-            return _evidencias;
+            bool antec = false;
+
+            antecedentes = antecedentes.ToLower();
+            if (antecedentes == "S")
+            {
+                antec = true;
+            }
+
+            Sospechoso s = new Sospechoso(nombre, ci, fechaNac, antec);
+
+            AgregarSospechoso(s);
         }
 
         /////////////// RETORNAR INVESTIGADOR POR MAIL ///////////////
@@ -405,7 +738,7 @@ namespace Dominio
         public void ValidarSospechoso(string nombre, string ci, DateTime fechaNac, string antec)
         {
             ValidarNombre(nombre);
-            ValidarCi(ci);
+            ValidarCiSospechoso(ci);
             ValidarFecha(fechaNac);
             ValidarAntecedentes(antec);
         }
@@ -444,7 +777,28 @@ namespace Dominio
             }
         }
 
-        public void ValidarCi(string c)
+        public void ValidarCiSospechoso(string c)
+        {
+            ValidarContenidoCi(c);
+            ExisteCiSospechoso(c);
+        }
+
+        private void ExisteCiSospechoso(string c)
+        {
+
+            List<Sospechoso> l = GetSospechosos();
+
+            foreach (Sospechoso s in l)
+            {
+                if(s.Cedula == c)
+                {
+                    throw new Exception(" < Ha ocurrido un error / Ya existe un Sospechoso con esa CI > ");
+                }
+            }
+
+        }
+
+        public void ValidarContenidoCi(string c)
         {
             if (c.IsWhiteSpace())
             {
@@ -461,6 +815,9 @@ namespace Dominio
                 throw new Exception(" < Ha ocurrido un error / El largo la CI no puede ser menor a 8 caracteres. > ");
             }
         }
+
+        
+
 
         //sistema
     }

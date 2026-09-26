@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Dominio
 {
-    public class Grabacion : Evidencia
+    public class Grabacion : Evidencia, IValidable
     {
         // CLASE HIJA de EVIDENCIA
 
@@ -32,7 +32,7 @@ namespace Dominio
         // // // // // // // // // // // // // // // // //
 
         // Se genera el método general ValidarDatos() como buena practica
-        public override void ValidarDatos()
+        public void ValidarDatos()
         {
             ValidarCalidad();
         }
