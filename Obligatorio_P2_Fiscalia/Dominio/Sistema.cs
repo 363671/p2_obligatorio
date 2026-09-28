@@ -658,7 +658,7 @@ namespace Dominio
         {
             bool antec = false;
 
-            antecedentes = antecedentes.ToLower();
+            antecedentes = antecedentes.ToUpper();
             if (antecedentes == "S")
             {
                 antec = true;
@@ -688,7 +688,7 @@ namespace Dominio
         }
 
         /////////////// MOSTRAR DATOS ///////////////
-        public string MostrarCasosYEvidencias()
+        public void MostrarCasosYEvidencias()
         {
             string textoConCasos = "";
             foreach (Caso c in _casos)
@@ -696,27 +696,28 @@ namespace Dominio
                 textoConCasos += c.ToString();
             }
 
-            //OpcionRegresoInicio();
-
-            return textoConCasos;
+            Console.WriteLine(textoConCasos);
         }
 
-        public string MostrarCasosDeUnInvestigador(string mail)
+        public void MostrarCasosDeUnInvestigador(string mail)
         {
             string textoConCasos = "";
 
             foreach (Caso c in _casos)
             {
-                if(c.InvestigadorD.Mail == mail) 
+                if(c.InvestigadorD.Mail == mail)
+                {
                     textoConCasos += c.ToString();
+                }
             }
 
             if(textoConCasos == "")
             {
-                return $"\n El Investigador no tiene casos asociados. \n";
+                Console.WriteLine($"\n El Investigador no tiene casos asociados. \n");
+                return;
             }
 
-            return textoConCasos;
+            Console.WriteLine(textoConCasos);
         }
 
         public string MostrarSospechososConAntecedentes()
@@ -785,7 +786,6 @@ namespace Dominio
 
         private void ExisteCiSospechoso(string c)
         {
-
             List<Sospechoso> l = GetSospechosos();
 
             foreach (Sospechoso s in l)
@@ -795,7 +795,6 @@ namespace Dominio
                     throw new Exception(" < Ha ocurrido un error / Ya existe un Sospechoso con esa CI > ");
                 }
             }
-
         }
 
         public void ValidarContenidoCi(string c)
@@ -810,7 +809,7 @@ namespace Dominio
                 throw new Exception(" < Ha ocurrido un error / El largo la CI no puede superar los 11 caracteres. > ");
             }
 
-            if (c.Length < 9)
+            if (c.Length < 8)
             {
                 throw new Exception(" < Ha ocurrido un error / El largo la CI no puede ser menor a 8 caracteres. > ");
             }

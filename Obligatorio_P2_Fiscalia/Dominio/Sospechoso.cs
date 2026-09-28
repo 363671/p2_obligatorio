@@ -47,11 +47,16 @@ namespace Dominio
                 throw new Exception(" < El largo de la CI no puede ser nulo. > ");
             }
 
-            if (Cedula.Length < 9)
+            if (Cedula.Length < 8)
             {
-                throw new Exception(" < El largo de la CI no puede ser menor a 9 caracteres. > ");
+                throw new Exception(" < Ha ocurrido un error / El largo la CI no puede ser menor a 8 caracteres. > ");
+
             }
 
+            if (Cedula.Length > 11)
+            {
+                throw new Exception(" < Ha ocurrido un error / El largo la CI no puede superar los 11 caracteres. > ");
+            }
         }
 
         private void ValidarNombre()
@@ -103,8 +108,11 @@ namespace Dominio
             return "NO";
         }
 
-        // POLIMORFISMO
-        
+        // // // // // // // // // // // // // // // // //
+        //                                              //
+        //                POLIMORFISMO                  //
+        //                                              //
+        // // // // // // // // // // // // // // // // //
 
         public override string ToString()
         {
