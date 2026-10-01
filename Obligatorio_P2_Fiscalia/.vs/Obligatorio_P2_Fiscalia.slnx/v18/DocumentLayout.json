@@ -36,7 +36,7 @@
               "RelativeDocumentMoniker": "Dominio\\Sistema.cs",
               "ToolTip": "C:\\Users\\diegu\\OneDrive - Facultad de Ingenieria - Universidad ORT Uruguay\\P2\\1 Obligatorio\\Obligatorio_P2_Fiscalia\\Dominio\\Sistema.cs",
               "RelativeToolTip": "Dominio\\Sistema.cs",
-              "ViewState": "AgIAACgAAAAAAAAAAAAowO0CAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABgAAAAAAAAAAAA4wCcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-09-13T20:33:18.251Z",
               "IsPinned": true,
@@ -50,7 +50,7 @@
               "RelativeDocumentMoniker": "UI\\Program.cs",
               "ToolTip": "C:\\Users\\diegu\\OneDrive - Facultad de Ingenieria - Universidad ORT Uruguay\\P2\\1 Obligatorio\\Obligatorio_P2_Fiscalia\\UI\\Program.cs",
               "RelativeToolTip": "UI\\Program.cs",
-              "ViewState": "AgIAAIABAAAAAAAAAAAiwIoBAABVAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-09-17T03:13:50.056Z",
               "IsPinned": true,
@@ -72,7 +72,7 @@
               "RelativeDocumentMoniker": "Dominio\\Sospechoso.cs",
               "ToolTip": "C:\\Users\\diegu\\OneDrive - Facultad de Ingenieria - Universidad ORT Uruguay\\P2\\1 Obligatorio\\Obligatorio_P2_Fiscalia\\Dominio\\Sospechoso.cs",
               "RelativeToolTip": "Dominio\\Sospechoso.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAA3wBgAAAAPAAAAAAAAAA==",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAzwBgAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-09-28T03:37:51.065Z",
               "EditorCaption": ""
@@ -87,8 +87,7 @@
               "RelativeToolTip": "Dominio\\Caso.cs",
               "ViewState": "AgIAAI0AAAAAAAAAAADwv6YAAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-28T01:52:18.257Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-28T01:52:18.257Z"
             }
           ]
         }

@@ -42,7 +42,6 @@ namespace Dominio
         }
         
         // > Precargas concretas
-
         private void PrecargarInvestigadores()
         {
             Investigador i1 = new Investigador("sherlock@gmail.com", "Pass1234.", "Sherlock Holmes", Rol.Detective);

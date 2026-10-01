@@ -76,12 +76,15 @@ namespace UI
                             s.AltaSospechoso(nombre, ci, fechaNac, antecedentes);
 
                             DataToUser.Op3AltaExitosa();
+                            DataToUser.OpcionRegresoInicio();
+
                             break;
 
                         // // // // CASO 4 // // // // 
                         case 4:
                             DataToUser.OpcionInicial4();
                             Console.WriteLine(s.MostrarSospechososConAntecedentes());
+                            DataToUser.OpcionRegresoInicio();
                             break;
 
                         // // // // CASO 5 // // // //
@@ -101,6 +104,7 @@ namespace UI
                 // // // // catches de errores // // // // 
                 catch (FormatException)
                 {
+                    Console.Clear();
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine(" \n ------------------- ERROR ------------------- ");
                     Console.WriteLine(" El formato que introduciste no es válido. \n Asegúrate de ingresarlo acorde a lo indicado.");
@@ -109,13 +113,17 @@ namespace UI
                 }
                 catch (Exception e)
                 {
+                    Console.Clear();
                     Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine($"Error: {e.Message}");
+                    Console.WriteLine($"\n Error: {e.Message}");
                     Console.ResetColor();
-                    Console.WriteLine("\n\n Por favor, intente de nuevo. \n");
+                    Console.WriteLine("\n Por favor, intente de nuevo. \n");
                 }
 
-                Console.ReadKey();
+                if (!eligioSalir)
+                {
+                    Console.ReadKey();
+                }
             }
 
             // Final de Program
@@ -151,7 +159,7 @@ namespace UI
 
             public static void MenuInicial()
             {
-                Console.Clear();
+                //Console.Clear();
 
                 Console.WriteLine($"\n |                Obligatorio 1 - P2               |");
                 Console.WriteLine($"               > Sistema de Fiscalía <");
@@ -269,24 +277,31 @@ namespace UI
             public static void OpcCorreoDelInvestigadorNoExiste(string mail)
             {
                 Console.Clear();
+
                 Console.ForegroundColor = ConsoleColor.Cyan;
 
                 Console.WriteLine($"\n <                     Elegiste                     >");
-                Console.WriteLine($"        2 - Casos de un Investigador \n");
+                Console.WriteLine($"            2 - Casos de un Investigador \n");
 
-                Console.ResetColor();
-                Console.WriteLine($" <   Ingresaste el CORREO {mail} del Investigador:  > ");
+                Console.Write($" <   Ingresaste el CORREO ");
+                Console.ForegroundColor = ConsoleColor.DarkCyan;
+                Console.Write($"'{mail}'");
+                Console.ForegroundColor = ConsoleColor.Cyan;
+                Console.Write($"   > \n\n");
 
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine($" <   No hay Investigador asociado a dicho correo:   > ");
 
-                Console.ForegroundColor = ConsoleColor.DarkYellow;
-                Console.WriteLine($" <      Presiona ENTER para ingresar otro mail      > ");
-                Console.WriteLine($" <        Presiona ESC para volver al Inicio        > \n");
-                
+                if (mail.Trim() != "") {
+
+                    Console.WriteLine($" <   No hay Investigador asociado a dicho correo   > \n");
+                } else
+                {
+                    Console.WriteLine($" <    El correo no puede ser nulo.    > \n");
+                }
+
                 Console.ResetColor();
-            }
 
+            }
 
             // // // // // // // // // // // // // // // // // // // // // //
             // Opcion 3 - Alta de un Sospechoso - se pide el Nombre Completo
@@ -298,11 +313,11 @@ namespace UI
                 Console.ForegroundColor = ConsoleColor.Cyan;
 
                 Console.WriteLine($"\n <             Elegiste           >");
-                Console.WriteLine($"\n   3 - Alta de un Sospechoso \n");
+                Console.WriteLine($"    3 - Alta de un Sospechoso \n");
 
                 Console.ForegroundColor = ConsoleColor.DarkYellow;
 
-                Console.WriteLine($"\n <   Ingresa el Nombre Completo:  > \n");
+                Console.WriteLine($" <   Ingresa el Nombre Completo:  > \n");
              
                 Console.ResetColor();
             }
@@ -313,14 +328,10 @@ namespace UI
                 Console.ForegroundColor = ConsoleColor.Cyan;
 
                 Console.WriteLine($"\n <                  Elegiste                  >");
-                Console.WriteLine($"\n           3 - Alta de un Sospechoso \n");
+                Console.WriteLine($"           3 - Alta de un Sospechoso \n");
 
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine($"\n        < Ingresaste un NOMBRE invalido > \n     ");
-
-                Console.ForegroundColor = ConsoleColor.DarkYellow;
-                Console.WriteLine($"\n <   Presiona ENTER para ingresar un NOMBRE   > \n");
-                Console.WriteLine($"\n <     Presiona ESC para volver al Inicio     > \n");
+                Console.WriteLine($"        < Ingresaste un NOMBRE invalido > \n     ");
 
                 Console.ResetColor();
             }
@@ -334,10 +345,10 @@ namespace UI
                 Console.ForegroundColor = ConsoleColor.Cyan;
 
                 Console.WriteLine($"\n <          Elegiste          >");
-                Console.WriteLine($"\n   3 - Alta de un Sospechoso \n");
+                Console.WriteLine($"   3 - Alta de un Sospechoso \n");
 
                 Console.ForegroundColor = ConsoleColor.DarkYellow;
-                Console.WriteLine($"\n <     Ingresa la Cedula:     > \n");
+                Console.WriteLine($" <     Ingresa la Cedula:     > \n");
 
                 Console.ResetColor();
             }
@@ -351,10 +362,10 @@ namespace UI
                 Console.ForegroundColor = ConsoleColor.Cyan;
 
                 Console.WriteLine($"\n <          Elegiste          >");
-                Console.WriteLine($"\n   3 - Alta de un Sospechoso \n");
+                Console.WriteLine($"   3 - Alta de un Sospechoso \n");
 
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine($"\n < Ingresaste una Cedula Inválida: > \n");
+                Console.WriteLine($" < Ingresaste una Cedula Inválida: > \n");
 
                 Console.ResetColor();
             }
@@ -385,14 +396,10 @@ namespace UI
 
                 Console.ForegroundColor = ConsoleColor.Cyan;
                 Console.WriteLine($"\n <                 Elegiste                >");
-                Console.WriteLine($"\n         3 - Alta de un Sospechoso \n");
+                Console.WriteLine($"         3 - Alta de un Sospechoso \n");
 
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine($"\n <  Ingresaste una FECHA de NAC. invalida: > \n");
-
-                Console.ForegroundColor = ConsoleColor.DarkYellow;
-                Console.WriteLine($"\n < Presiona ENTER para ingresar otra FECHA > \n");
-                Console.WriteLine($"\n   < Presiona ESC para volver al Inicio > \n");
+                Console.WriteLine($" <  Ingresaste una FECHA de NAC. invalida: > \n");
 
                 Console.ResetColor();
             }
@@ -411,8 +418,6 @@ namespace UI
                 Console.ForegroundColor = ConsoleColor.DarkYellow;
                 Console.WriteLine($"\n <    Ingresa S si tiene Antecedentes    > ");
                 Console.WriteLine($" <   Ingresa N si no tiene Antecedentes  > \n");
-
-                Console.WriteLine($" <   Presiona ESC para volver al Inicio  > \n");
 
                 Console.ResetColor();
             }
@@ -434,8 +439,6 @@ namespace UI
                 Console.WriteLine($"\n < Ingresaste una opcion invalida > \n");
 
                 Console.ForegroundColor = ConsoleColor.DarkYellow;
-                Console.WriteLine($" < Presiona ENTER para ingresar si tiene o no Antecedentes > ");
-                Console.WriteLine($" < Presiona ESC para volver al Inicio > \n");
 
                 Console.ResetColor();
             }
@@ -455,9 +458,6 @@ namespace UI
                 Console.ForegroundColor = ConsoleColor.DarkGreen;
                 Console.WriteLine($" <          ¡Sospechoso ingresado!          > \n");
 
-                Console.ForegroundColor = ConsoleColor.DarkYellow;
-                Console.WriteLine($"n <   Presiona ENTER para volver al Inicio   > \n");
-
                 Console.ResetColor();
             }
 
@@ -467,9 +467,6 @@ namespace UI
 
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine($"\n <   Elegiste una opcion invalida    >");
-
-                Console.ForegroundColor = ConsoleColor.DarkYellow;
-                Console.WriteLine($"\n < Presiona ESC para elegir otra vez >");
 
                 Console.ResetColor();
             }
