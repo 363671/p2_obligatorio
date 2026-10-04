@@ -97,6 +97,15 @@ namespace Dominio
                 throw new Exception(" < Ha ocurrido un error / Fecha de Nacimiento / > ");
             }
         }
+        public bool SospechosoTieneAntecedentes()
+        {
+            return TieneAntecedentes;
+        }
+
+        public bool SospechosoTieneCi(string c)
+        {
+            return Cedula == c;
+        }
 
         public string AntecedentesAString(bool antec)
         {

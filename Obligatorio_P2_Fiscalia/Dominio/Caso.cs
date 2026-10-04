@@ -161,6 +161,11 @@ namespace Dominio
         {
             return _evidenciasDelCaso;
         }
+        
+        public bool MailEsDeInvestigador(string mail)
+        {
+            return InvestigadorD.InvestigadorTieneMail(mail);
+        }
 
         // // // // // // // // // // // // // // // // //
         //                                              //
@@ -190,6 +195,5 @@ namespace Dominio
         {
             return obj is Caso caso && Nombre == caso.Nombre;
         }
-
     }
 }

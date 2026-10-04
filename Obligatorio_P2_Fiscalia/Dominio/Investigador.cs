@@ -92,6 +92,11 @@ namespace Dominio
             }
         }
 
+        public bool InvestigadorTieneMail(string mail)
+        {
+            return Mail == mail;
+        }
+
         private void ValidarContrasena()
         {
             string errores = "";

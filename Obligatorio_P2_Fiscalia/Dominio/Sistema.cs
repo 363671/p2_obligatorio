@@ -669,7 +669,7 @@ namespace Dominio
 
             foreach (Investigador inv in lista)
             {
-                if (inv.Mail == mail)
+                if (inv.InvestigadorTieneMail(mail))
                 {
                     i = inv;
                 }
@@ -677,7 +677,7 @@ namespace Dominio
 
             return i;
         }
-
+        
         /////////////// MOSTRAR DATOS ///////////////
         public string MostrarCasosYEvidencias()
         {
@@ -696,7 +696,8 @@ namespace Dominio
 
             foreach (Caso c in _casos)
             {
-                if(c.InvestigadorD.Mail == mail)
+                // se delega la responsabilidad a su Clase
+                if(c.MailEsDeInvestigador(mail))
                 {
                     textoConCasos += c.ToString();
                 }
@@ -716,7 +717,8 @@ namespace Dominio
 
             foreach (Sospechoso s in _sospechosos)
             {
-                if (s.TieneAntecedentes)
+                // se delega la responsabilidad a su Clase
+                if (s.SospechosoTieneAntecedentes())
                 {
                     textoConSospechosos += s.ToString();
                     textoConSospechosos += "\n";
@@ -731,10 +733,10 @@ namespace Dominio
             ValidarNombre(nombre);
             ValidarCiSospechoso(ci);
             ValidarFecha(fechaNac);
-            ValidarAntecedentes(antec);
+            ValidarStringAntecedentes(antec);
         }
 
-        private void ValidarAntecedentes(string antec)
+        private void ValidarStringAntecedentes(string antec)
         {
             antec = antec.ToUpper();
 
@@ -780,8 +782,9 @@ namespace Dominio
 
             foreach (Sospechoso s in l)
             {
-                if(s.Cedula == c)
-                {
+                // se delega la responsabilidad a su Clase
+                if(s.SospechosoTieneCi(c))
+                    {
                     throw new Exception(" < Ha ocurrido un error / Ya existe un Sospechoso con esa CI > ");
                 }
             }
@@ -804,9 +807,6 @@ namespace Dominio
                 throw new Exception(" < Ha ocurrido un error / El largo la CI no puede ser menor a 8 caracteres. > ");
             }
         }
-
-        
-
 
         //sistema
     }
