@@ -27,29 +27,32 @@ namespace UI
                     {
                         // // // // CASO 1 // // // // 
                         case 1:
+                            // >
                             DataToUser.OpcionInicial1();
-                            s.MostrarCasosYEvidencias();
+                            Console.WriteLine(s.MostrarCasosYEvidencias());
                             DataToUser.OpcionRegresoInicio();
                             break;
-
+                            // >
                         // // // // CASO 2 // // // // 
                         case 2:
+                            // >
                             DataToUser.OpcionInicial2SolicitaCorreo();
                             string mail = Console.ReadLine();
 
                             if (s.GetInvestigadorPorMail(mail) != null)
                             {
                                 DataToUser.Opcion2ListadoDeInvestigador(mail);
-                                s.MostrarCasosDeUnInvestigador(mail);
+                                Console.WriteLine(s.MostrarCasosDeUnInvestigador(mail));
                             } else {
                                 DataToUser.OpcCorreoDelInvestigadorNoExiste(mail);
                             }
 
                             DataToUser.OpcionRegresoInicio();
                             break;
-
+                            // >
                         // // // // CASO 3 // // // //
                         case 3:
+                            // >
                             // Se solicitan los datos del sospechoso
                             DataToUser.OpcionInicial3SolicitaNombre();
                             string nombre = Console.ReadLine();
@@ -79,45 +82,52 @@ namespace UI
                             DataToUser.OpcionRegresoInicio();
 
                             break;
-
+                            // >
                         // // // // CASO 4 // // // // 
                         case 4:
+                            // >
                             DataToUser.OpcionInicial4();
                             Console.WriteLine(s.MostrarSospechososConAntecedentes());
                             DataToUser.OpcionRegresoInicio();
                             break;
-
+                            // >
                         // // // // CASO 5 // // // //
                         case 5:
+                            // >
                             // Se cambia la Bandera para finalizar el While
                             eligioSalir = true;
                             break;
-
+                            // >
                         // // // // CASO DEFAULT // // // // 
                         default:
+                            // >
                             DataToUser.OpcionInicial5();
                             break;
+                            // >
                     }
-
                 }
 
                 // // // // catches de errores // // // // 
                 catch (FormatException)
                 {
+                    // >
                     Console.Clear();
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine(" \n ------------------- ERROR ------------------- ");
                     Console.WriteLine(" El formato que introduciste no es válido. \n Asegúrate de ingresarlo acorde a lo indicado.");
                     Console.WriteLine(" \n ----------- ENTER para reintentar ----------- ");
                     Console.ResetColor();
+                    // >
                 }
                 catch (Exception e)
                 {
+                    // >
                     Console.Clear();
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine($"\n Error: {e.Message}");
                     Console.ResetColor();
                     Console.WriteLine("\n Por favor, intente de nuevo. \n");
+                    // >
                 }
 
                 if (!eligioSalir)
@@ -129,6 +139,8 @@ namespace UI
             // Final de Program
         }
 
+        // Clase para reciclar los mensajes que se
+        // le muestran en consola al usuario
         public static class DataToUser
         {
             // // // // // // // // // // // // // // // // //
@@ -159,7 +171,7 @@ namespace UI
 
             public static void MenuInicial()
             {
-                //Console.Clear();
+                Console.Clear();
 
                 Console.WriteLine($"\n |                Obligatorio 1 - P2               |");
                 Console.WriteLine($"               > Sistema de Fiscalía <");

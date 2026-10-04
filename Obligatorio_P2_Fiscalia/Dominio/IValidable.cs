@@ -6,11 +6,6 @@ namespace Dominio
 {
     public interface IValidable
     {
-        public void ValidarDatos()
-        {
-            Console.WriteLine("qw");
-        }
-
-
+        public void ValidarDatos();
     }
 }

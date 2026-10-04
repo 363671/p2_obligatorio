@@ -7,14 +7,14 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Dominio
 {
-    public class Sistema : IValidable
+    public class Sistema
     {
         // ATRIBUTOS y PROPERTIES
         private List<Investigador> _investigadores { get; } = new List<Investigador>();
         private List<Sospechoso> _sospechosos { get; } = new List<Sospechoso>();
         private List<Caso> _casos { get; } = new List<Caso>();
         private static Sistema _instancia;
-        
+
         // CTOR
         private Sistema()
         {
@@ -248,7 +248,6 @@ namespace Dominio
                 )
             );
 
-
             // ==========================================================
             // CASO 3 - Se crea inicialmente con evidencia FÍSICA
             // ==========================================================
@@ -289,7 +288,6 @@ namespace Dominio
                     "Trozo de tela encontrado enganchado en la vitrina."
                 )
             );
-
 
             // ==========================================================
             // CASO 4 - TESTIMONIO
@@ -332,7 +330,6 @@ namespace Dominio
                 )
             );
 
-
             // ==========================================================
             // CASO 5 - GRABACIÓN
             // ==========================================================
@@ -374,7 +371,6 @@ namespace Dominio
                 )
             );
 
-
             // ==========================================================
             // CASO 6 - FÍSICA
             // ==========================================================
@@ -414,7 +410,6 @@ namespace Dominio
                     "Linterna encontrada dentro de una zona restringida."
                 )
             );
-
 
             // ==========================================================
             // CASO 7 - TESTIMONIO
@@ -457,7 +452,6 @@ namespace Dominio
                 )
             );
 
-
             // ==========================================================
             // CASO 8 - GRABACIÓN
             // ==========================================================
@@ -499,7 +493,6 @@ namespace Dominio
                 )
             );
 
-
             // ==========================================================
             // CASO 9 - FÍSICA
             // ==========================================================
@@ -539,7 +532,6 @@ namespace Dominio
                     "Bolsa abandonada cerca de la entrada de la farmacia."
                 )
             );
-
 
             // ==========================================================
             // CASO 10 - GRABACIÓN
@@ -598,7 +590,6 @@ namespace Dominio
         }
 
         //////////////////// AGREGAR A LAS LISTAS DE DATOS ////////////////////
-
         // > Agregar Investigador
         private void AgregarInvestigador(Investigador i)
         {
@@ -664,7 +655,8 @@ namespace Dominio
             }
 
             Sospechoso s = new Sospechoso(nombre, ci, fechaNac, antec);
-
+            
+            s.ValidarDatos();
             AgregarSospechoso(s);
         }
 
@@ -687,7 +679,7 @@ namespace Dominio
         }
 
         /////////////// MOSTRAR DATOS ///////////////
-        public void MostrarCasosYEvidencias()
+        public string MostrarCasosYEvidencias()
         {
             string textoConCasos = "";
             foreach (Caso c in _casos)
@@ -695,10 +687,10 @@ namespace Dominio
                 textoConCasos += c.ToString();
             }
 
-            Console.WriteLine(textoConCasos);
+            return(textoConCasos);
         }
 
-        public void MostrarCasosDeUnInvestigador(string mail)
+        public string MostrarCasosDeUnInvestigador(string mail)
         {
             string textoConCasos = "";
 
@@ -712,11 +704,10 @@ namespace Dominio
 
             if(textoConCasos == "")
             {
-                Console.WriteLine($"\n El Investigador no tiene casos asociados. \n");
-                return;
+                return "\n El Investigador no tiene casos asociados. \n";
             }
 
-            Console.WriteLine(textoConCasos);
+            return textoConCasos;
         }
 
         public string MostrarSospechososConAntecedentes()

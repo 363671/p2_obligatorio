@@ -8,12 +8,12 @@ namespace Dominio
     {
         // ATRIBUTOS y PROPERTIES
 
-        public static int UltimoId { get; set; } = 0;
-        public int Id { get; set; }
-        public string Nombre { get; set; }
-        public string Cedula { get; set; }
-        public DateTime FechaNacimiento { get; set; }
-        public bool TieneAntecedentes { get; set; }
+        private static int UltimoId { get; set; } = 0;
+        private int Id { get; set; }
+        private string Nombre { get; set; }
+        private string Cedula { get; set; }
+        private DateTime FechaNacimiento { get; set; }
+        private bool TieneAntecedentes { get; set; }
 
         // CTOR
         public Sospechoso()

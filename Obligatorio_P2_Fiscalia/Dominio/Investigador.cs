@@ -8,12 +8,12 @@ namespace Dominio
     public class Investigador : IValidable
     {
         // ATRIBUTOS y PROPERTIES
-        public static int UltimoId { get; set; } = 0;
-        public int Id { get; set; }
-        public string Mail { get; set; }
-        public string Contrasena { get; set; }
-        public string Nombre { get; set; }
-        public Rol Rol { get; set; }
+        private static int UltimoId { get; set; } = 0;
+        private int Id { get; set; }
+        private string Mail { get; set; }
+        private string Contrasena { get; set; }
+        private string Nombre { get; set; }
+        private Rol Rol { get; set; }
 
         // CTOR
         public Investigador()

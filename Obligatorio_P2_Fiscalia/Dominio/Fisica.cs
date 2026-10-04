@@ -7,9 +7,9 @@ namespace Dominio
     public class Fisica : Evidencia
     {
         // CLASE HIJA de EVIDENCIA
-        
+
         // PROPERTIES
-        public bool TieneHuellasDigitales { get; set; }
+        private bool TieneHuellasDigitales { get; set; }
 
         // CTOR
         public Fisica(bool tieneHuellas, DateTime fechaRecoleccion, string descripcion) : base (fechaRecoleccion, descripcion)

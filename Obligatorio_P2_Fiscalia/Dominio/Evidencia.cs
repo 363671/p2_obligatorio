@@ -9,11 +9,10 @@ namespace Dominio
     public abstract class Evidencia : IValidable
     {
         // ATRIBUTOS y PROPERTIES
-        public static int UltimoId { get; set; } = 0;
+        private static int UltimoId { get; set; } = 0;
         protected int Id { get; set; }
-        public DateTime FechaRecoleccion { get; set; }
-        protected string Descripcion { get; set; }
-
+        private DateTime FechaRecoleccion { get; set; }
+        private string Descripcion { get; set; }
 
         // ctor
         public Evidencia()
