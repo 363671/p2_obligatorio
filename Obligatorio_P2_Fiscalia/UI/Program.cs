@@ -72,10 +72,6 @@ namespace UI
                             string antecedentes = Console.ReadLine();
                             Console.WriteLine($" Llevas 4/4 datos -> Nombre: {nombre} / CI: {ci} / Fecha Nac.: {fechaNac} / Antecedentes: {antecedentes} \n");
                             
-                            // Se validan los datos del sospechoso
-                            s.ValidarSospechoso(nombre, ci, fechaNac, antecedentes);
-
-                            // Si la validacion de antes no arroja ninguna Exception, se crea el Sospechoso
                             s.AltaSospechoso(nombre, ci, fechaNac, antecedentes);
 
                             DataToUser.Op3AltaExitosa();

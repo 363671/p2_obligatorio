@@ -646,18 +646,30 @@ namespace Dominio
         //////////////////// CREACION DE SOSPECHOSO (para el caso 3) ////////////////////
         public void AltaSospechoso(string nombre, string ci, DateTime fechaNac, string antecedentes)
         {
-            bool antec = false;
-
-            antecedentes = antecedentes.ToUpper();
-            if (antecedentes == "S")
-            {
-                antec = true;
-            }
+            // como antecedentes es un string se convierte a booleano
+            bool antec = AntecedentesStringABool(antecedentes);
 
             Sospechoso s = new Sospechoso(nombre, ci, fechaNac, antec);
             
             s.ValidarDatos();
             AgregarSospechoso(s);
+        }
+
+        private bool AntecedentesStringABool(string antecedentes)
+        {
+            // se valida que el string este bien
+            ValidarStringAntecedentes(antecedentes);
+
+            antecedentes = antecedentes.ToUpper();
+
+            bool antec = false;
+
+            if (antecedentes == "S")
+            {
+                antec = true;
+            }
+
+            return antec;
         }
 
         /////////////// RETORNAR INVESTIGADOR POR MAIL ///////////////
@@ -728,14 +740,6 @@ namespace Dominio
             return textoConSospechosos;
         }
 
-        public void ValidarSospechoso(string nombre, string ci, DateTime fechaNac, string antec)
-        {
-            ValidarNombre(nombre);
-            ValidarCiSospechoso(ci);
-            ValidarFecha(fechaNac);
-            ValidarStringAntecedentes(antec);
-        }
-
         private void ValidarStringAntecedentes(string antec)
         {
             antec = antec.ToUpper();
@@ -745,69 +749,26 @@ namespace Dominio
                 throw new Exception(" < Ha ocurrido un error / Opcion invalida de Antecedentes > ");
             }
         }
+         
+        //public void ValidarCiSospechoso(string c)
+        //{
+        //    ExisteCiSospechoso(c);
+        //}
 
-        private void ValidarFecha(DateTime fechaNac)
-        {
-            DateTime fechaLimite = DateTime.Today.AddYears(-12);
+        //private void ExisteCiSospechoso(string c)
+        //{
+        //    List<Sospechoso> l = GetSospechosos();
 
-            if (fechaNac > fechaLimite) 
-            {
-                throw new Exception(" < Ha ocurrido un error / La Fecha de nac. es de un menor de 12 anhos > ");
-            }
-        }
-
-        public void ValidarNombre(string n)
-        {
-            if (n.IsWhiteSpace())
-            {
-                throw new Exception(" < Ha ocurrido un error / El largo del nombre no puede ser nulo. > ");
-            }
-
-            if (n.Length > 90)
-            {
-                throw new Exception(" < Ha ocurrido un error / El largo del nombre no puede superar los 90 caracteres. > ");
-
-            }
-        }
-
-        public void ValidarCiSospechoso(string c)
-        {
-            ValidarContenidoCi(c);
-            ExisteCiSospechoso(c);
-        }
-
-        private void ExisteCiSospechoso(string c)
-        {
-            List<Sospechoso> l = GetSospechosos();
-
-            foreach (Sospechoso s in l)
-            {
-                // se delega la responsabilidad a su Clase
-                if(s.SospechosoTieneCi(c))
-                    {
-                    throw new Exception(" < Ha ocurrido un error / Ya existe un Sospechoso con esa CI > ");
-                }
-            }
-        }
-
-        public void ValidarContenidoCi(string c)
-        {
-            if (c.IsWhiteSpace())
-            {
-                throw new Exception(" < Ha ocurrido un error / El largo de la CI no puede ser nulo. > ");
-            }
-
-            if (c.Length > 11)
-            {
-                throw new Exception(" < Ha ocurrido un error / El largo la CI no puede superar los 11 caracteres. > ");
-            }
-
-            if (c.Length < 8)
-            {
-                throw new Exception(" < Ha ocurrido un error / El largo la CI no puede ser menor a 8 caracteres. > ");
-            }
-        }
-
+        //    foreach (Sospechoso s in l)
+        //    {
+        //        // se delega la responsabilidad a su Clase
+        //        if(s.SospechosoTieneCi(c))
+        //            {
+        //            throw new Exception(" < Ha ocurrido un error / Ya existe un Sospechoso con esa CI > ");
+        //        }
+        //    }
+        //}
+        
         //sistema
     }
 }

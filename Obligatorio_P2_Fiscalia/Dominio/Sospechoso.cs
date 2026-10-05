@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Dominio
 {
-    public class Sospechoso
+    public class Sospechoso : IValidable
     {
         // ATRIBUTOS y PROPERTIES
 
@@ -84,6 +84,15 @@ namespace Dominio
 
         private void ValidarFechaNacimiento()
         {
+            // >
+            DateTime fechaLimite = DateTime.Today.AddYears(-12);
+
+            if (FechaNacimiento > fechaLimite)
+            {
+                throw new Exception(" < Ha ocurrido un error / La Fecha de nac. es de un menor de 12 anhos > ");
+            }
+
+            // >
             string errores = "";
 
             if (FechaNacimiento >= DateTime.Today)
@@ -91,12 +100,14 @@ namespace Dominio
                 errores += "Fecha de Nacimiento invalida";
             }
 
+            // >
             if (errores != "")
             {
                 Console.WriteLine("");
                 throw new Exception(" < Ha ocurrido un error / Fecha de Nacimiento / > ");
             }
         }
+
         public bool SospechosoTieneAntecedentes()
         {
             return TieneAntecedentes;
